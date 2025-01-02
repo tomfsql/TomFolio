@@ -1,19 +1,18 @@
 <template>
-  <nav>
-    <RouterLink to="/">Home</RouterLink> |
-    <RouterLink to="/about">À propos de moi</RouterLink>
-    <RouterLink to="/projects">Projets</RouterLink>
-  </nav>
+  <h1> Tom Fasquelle : PortFolio </h1>
+  <RouterLink to="/">Home</RouterLink> |
+  <RouterLink to="/about">À propos de moi</RouterLink>
+  <RouterLink to="/projects">Projets</RouterLink>
   <RouterView></RouterView>
 </template>
 
 <script>
-import { RouterLink, RouterView } from 'vue-router'
+ import { RouterLink, RouterView } from 'vue-router'
 
 export default {
   name: 'App',
   components: {
-    RouterLink, RouterView
+      RouterLink, RouterView
   }
 }
 </script>
