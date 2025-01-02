@@ -1,8 +1,8 @@
 <template>
   <h1> Tom Fasquelle : PortFolio </h1>
-  <RouterLink to="/">Home</RouterLink> |
-  <RouterLink to="/about">À propos de moi</RouterLink>
-  <RouterLink to="/projects">Projets</RouterLink>
+  <RouterLink to="/"> Home </RouterLink>
+  <RouterLink to="/about"> À propos de moi </RouterLink>
+  <RouterLink to="/projects"> Projets </RouterLink>
   <RouterView></RouterView>
 </template>
 
