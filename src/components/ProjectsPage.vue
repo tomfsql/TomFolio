@@ -105,13 +105,17 @@
   <style scoped>
 
   h3 {
-    text-align: center;
+    text-align: left;
   }
 
 
   .collapsebtn{
     color: black;
     height: fit-content;
+  }
+
+  .title > button, .project-header > button {
+    margin-top: 20px;
   }
 
   .title, .project-header {
@@ -123,6 +127,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    margin: 10px;
+    border: 2px dotted black;
   }
   </style>
   
