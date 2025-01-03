@@ -1,9 +1,5 @@
 <template>
-  <h1> Mes projets </h1>
-
-
-      <!-- TODO : ajouter boutons pour afficher ou non les catégories -->
-      
+  <h1> Mes projets </h1>      
       <div class="title"> 
         <h3> Projets scolaires </h3>
         <button v-if="this.showMainCategories['IUT']" class="collapsebtn" @click="toggleCategory('IUT')"> - </button>
@@ -12,41 +8,45 @@
 
       <div class="category" v-if="this.showMainCategories['IUT']">
 
-        <div class="project" v-if="this.showSingleProject['Solveur'] == true"> 
-        <button v-if="this.showSingleProject['Solveur']" class="collapsebtn" @click="toggleProject('Solveur')"> - </button>
-        <button v-else class="collapsebtn" @click="toggleProject('Solveur')"> + </button>
-        <h4> Application web de planification des stages ( back-end en Python avec SAGE pour la résolution d'équation )  </h4>
-        <div class="project-content" v-if="this.showSingleProject['Solveur']">
+        <div class="project"> 
+          <div class="project-header">
+            <h4> Application web de planification des stages ( back-end en Python avec SAGE pour la résolution d'équation )  </h4>
+            <button v-if="this.showSingleProject['Solveur']" class="collapsebtn" @click="toggleProject('Solveur')"> - </button>
+            <button v-else class="collapsebtn" @click="toggleProject('Solveur')"> + </button>
+          </div>
+          <div class="project-content" v-if="this.showSingleProject['Solveur']">
 
-          <p> J'ai réalisé ce projet dans le cadre de mon BUT Informatique en Année Spéciale</p>
-          <p> Mon rôle a été de créer et faire fonctionner le solveur, s'appuyant sur la libraire SAGE </p>
+            <p> J'ai réalisé ce projet dans le cadre de mon BUT Informatique en Année Spéciale</p>
+            <p> Mon rôle a été de créer et faire fonctionner le solveur, s'appuyant sur la libraire SAGE </p>
 
-        </div> 
+          </div> 
+        </div>
 
-        <div class="project" v-if="this.showSingleProject['Exercices']"> 
-        <button v-if="this.showSingleProject['Exercices']" class="collapsebtn" @click="toggleProject('Exercices')"> - </button>
-        <button v-else class="collapsebtn" @click="toggleProject('Exercices')"> + </button>
-        <h4> Application web de gestion d'exercices ( Angular, front-end et back-end ) </h4>
-        <div class="project-content" v-if="this.showSingleProject['Exercices']">
+        <div class="project"> 
+          <div class="project-header">
+            <h4> Application web de gestion d'exercices ( Angular, front-end et back-end ) </h4>
+            <button v-if="this.showSingleProject['Exercices']" class="collapsebtn" @click="toggleProject('Exercices')"> - </button>
+            <button v-else class="collapsebtn" @click="toggleProject('Exercices')"> + </button>
+          </div>
+          <div class="project-content" v-if="this.showSingleProject['Exercices']">
 
-          <p> Ce projet a pris place dans le cadre du cours de programmation avancée en front-end, au premier semestre de BUT3 </p>
+            <p> Ce projet a pris place dans le cadre du cours de programmation avancée en front-end, au premier semestre de BUT3 </p>
 
-        </div> 
-      </div>
+          </div> 
+        </div>
 
-      <div class="project" v-if="this.showSingleProject['SiteWeb']"> 
-          <button v-if="this.showSingleProject['SiteWeb']" class="collapsebtn" @click="toggleProject('SiteWeb')"> - </button>
-          <button v-else class="collapsebtn" @click="toggleProject('SiteWeb')"> + </button>
-          <h4> Site web statique en HTML/CSS afin de présenter les mobilités douces </h4>
+        <div class="project" v-if="this.showSingleProject['SiteWeb']"> 
+          <div class="project-header">
+            <h4> Site web statique en HTML/CSS afin de présenter les mobilités douces </h4>
+            <button v-if="this.showSingleProject['SiteWeb']" class="collapsebtn" @click="toggleProject('SiteWeb')"> - </button>
+            <button v-else class="collapsebtn" @click="toggleProject('SiteWeb')"> + </button>
+          </div>
           <div class="project-content" v-if="this.showSingleProject['SiteWeb']">
             <p> Site web responsive, que j'ai développé en binôme au premier semestre de mon BUT Année Spéciale </p>
           </div> 
-      </div>
+        </div>
 
       </div>
-
-      </div>
-      
 
       <div class="title"> 
 
@@ -58,18 +58,22 @@
 
       <div class="category" v-if="this.showMainCategories['VP']">
         <div class="project"> 
-          <button v-if="this.showMainCategories['Annuaire']" class="collapsebtn" @click="toggleProject('Annuaire')"> - </button>
-          <button v-else class="collapsebtn" @click="toggleProject('Annuaire')"> + </button>
-          <h4> Application web de gestion d'un annuaire, via Flask ( back-end en Python, front-end en HTML, connexion à une base de données ) </h4>
+          <div class="project-header">
+            <h4> Application web de gestion d'un annuaire, via Flask ( back-end en Python, front-end en HTML, connexion à une base de données ) </h4>
+            <button v-if="this.showMainCategories['Annuaire']" class="collapsebtn" @click="toggleProject('Annuaire')"> - </button>
+            <button v-else class="collapsebtn" @click="toggleProject('Annuaire')"> + </button>
+          </div>
           <div class="project-content" v-if="this.showSingleProject['Annuaire']"> 
-            <p> TODO ajouter du texte </p>
+            <p> Application web destinée au fonctionnement interne de l'entreprise, accès via LDAP ( Lightweight Directory Access Protocol ) au fichier de données </p>
           </div>
         </div>
 
-        <div v-if="this.showSingleProject['PropertyGrid']">
-          <button v-if="this.showMainCategories['PropertyGrid']" class="collapsebtn" @click="toggleProject('PropertyGrid')"> - </button>
-          <button v-else class="collapsebtn" @click="toggleProject('PropertyGrid')"> + </button>
-          <h4> Application web afin de remplacer une interface, prenant en paramètre un fichier JSON et extrayant les données ( Vuejs, front-end ) </h4>
+        <div class="project">
+          <div class="project-header">
+            <h4> Application web afin de remplacer une interface, prenant en paramètre un fichier JSON et extrayant les données ( Vuejs, front-end ) </h4>
+            <button v-if="this.showMainCategories['PropertyGrid']" class="collapsebtn" @click="toggleProject('PropertyGrid')"> - </button>
+            <button v-else class="collapsebtn" @click="toggleProject('PropertyGrid')"> + </button>
+          </div>
           <div class="project-content" v-if="this.showSingleProject['PropertyGrid']"> 
             <p> Application web permettant d'afficher les données dynamiquement </p>
           </div>
@@ -106,15 +110,18 @@
 
 
   .collapsebtn{
-    height: 10px;
-    width: 10px;
-    border: none;
     color: black;
+    height: fit-content;
   }
 
-  .title, .project{
+  .title, .project-header {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .project, .category {
+    display: flex;
+    flex-direction: column;
     justify-content: space-around;
   }
   </style>
