@@ -80,6 +80,12 @@
         </div>
       </div>
 
+  <p> En bref : j'ai pu développer en utilisant divers outils et langages </p>
+  <ul>
+    <li> Web : VueJS, Flask, Angular </li>
+    <li> Logiciel : C++, C# </li>
+    <li> Outils : Git, Docker</li>
+  </ul>
 </template>
   
   <script>
