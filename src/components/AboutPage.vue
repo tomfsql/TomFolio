@@ -6,7 +6,7 @@
       <li> 24 ans, résidant à Villeurbanne, permis B et véhiculé </li>
       <li> Alternant à ViewPoint en tant que développeur logiciel </li>
     </ul>
-    <p> En plus des compétences techniques présentées dans la page des mes compétences, j'en ai également développé certaines non-techniques, de par mes activités extra-scolaires :</p>
+    <p> En plus des compétences techniques présentées dans la page des mes  <RouterLink to="/skills">compétences</RouterLink>, j'en ai également développé certaines non-techniques, de par mes activités extra-scolaires :</p>
     <ul>
         <li> Membre de la fédération des BDE de l'IUT Lyon 1 Doua </li>
         <li> Tutorat pour des élèves de l'IUT </li>

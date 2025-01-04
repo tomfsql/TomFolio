@@ -3,6 +3,7 @@
   <RouterLink to="/"> Home </RouterLink>
   <RouterLink to="/about"> À propos de moi </RouterLink>
   <RouterLink to="/projects"> Projets </RouterLink>
+  <RouterLink to="/skills"> Compétences </RouterLink>
   <RouterView></RouterView>
 </template>
 
