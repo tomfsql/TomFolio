@@ -14,12 +14,12 @@
                 <td> Java</td>
                 <td> C </td>
                 <td> JavaScript/TypeScript</td>
-                <td> Angular </td>
-                <td> VueJS </td>
                 <td> Python </td>
-                <td> Flask </td>
                 <td> HTML/CSS </td>
                 <td> PHP </td>
+                <td> Angular </td>
+                <td> VueJS </td>
+                <td> Flask </td>
                 <td> PL/SQL </td>
                 <td> MongoDB </td>
                 <td> Git </td>
@@ -33,6 +33,10 @@
             </tr>
             <tr>
                 <td> Catégorie </td>
+                <td colspan="6"> Langage de programmation </td>
+                <td colspan="3"> Framework de développement </td>
+                <td colspan="2"> Langage de manipulation de Base de Données </td>
+                <td colspan="3"> Outil/langage système </td>
             </tr>
             <tr>
                 <td> Maîtrise </td>
@@ -64,5 +68,11 @@
   }
   a {
     color: #42b983;
+  }
+  table{
+    width: 100%;
+  }
+  td{
+    width: fit-content;
   }
   </style>
