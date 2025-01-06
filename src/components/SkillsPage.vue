@@ -1,12 +1,8 @@
 <template>
     <h1> Mes compétences </h1>
 
-    <p> Tout au long de mon cursus scolaire, j'ai pu développer diverses compétences techniques , dans les domaines suivants </p>
-    <ul>
-        <li> Langages de programmation et frameworks de développement</li>
-        <li> Systèmes de Gestion de Bases de Données </li>
-        <li> Outils informatiques et systèmes d'exploitation</li>
-    </ul>
+    <p> Tout au long de mon cursus scolaire, j'ai pu développer diverses compétences techniques, dans les domaines suivants : </p>
+  
     <table>
         <thead>
             <tr>
@@ -69,8 +65,11 @@
   a {
     color: #42b983;
   }
-  table{
+  table {
     width: 100%;
+  }
+  table, thead, tbody, tr, tbody + tr + td{
+    border: 1px solid black;
   }
   td{
     width: fit-content;
