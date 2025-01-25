@@ -14,10 +14,11 @@
                 <td> HTML/CSS </td>
                 <td> PHP </td>
                 <td> Angular </td>
-                <td> VueJS </td>
+                <td> Vue.js </td>
                 <td> Flask </td>
                 <td> PL/SQL </td>
                 <td> MongoDB </td>
+                <td> Neo4J</td>
                 <td> Git </td>
                 <td> Docker </td>
                 <td> Bash </td>
@@ -26,16 +27,30 @@
         <tbody>
             <tr>
                 <td> Usage depuis </td>
+                <td colspan="2"> 2021 </td>
+                <td> 2024 </td>
+                <td colspan="2"> 2023 </td>
+                <td colspan="7"> 2024</td>
+                <td> 2021</td>
+                <td colspan="2"> 2024</td>
             </tr>
             <tr>
                 <td> Catégorie </td>
                 <td colspan="6"> Langage de programmation </td>
                 <td colspan="3"> Framework de développement </td>
-                <td colspan="2"> Langage de manipulation de Base de Données </td>
+                <td colspan="3"> Langage de manipulation de Base de Données </td>
                 <td colspan="3"> Outil/langage système </td>
             </tr>
             <tr>
                 <td> Maîtrise </td>
+                <td class="good"> Bonne </td>
+                <td class="mid"> Moyenne </td>
+                <td class="good" colspan="3"> Bonne </td>
+                <td class="mid"> Moyenne </td>
+                <td class="good" colspan="4"> Bonne </td>
+                <td class="mid" colspan="2"> Moyenne</td>
+                <td class="good"> Bonne </td>
+                <td class="mid" colspan="2"> Moyenne </td>
             </tr>
         </tbody>
     </table>
@@ -73,5 +88,14 @@
   }
   td{
     width: fit-content;
+    border: 1px dotted blue ;
+  }
+
+  .good {
+    background-color: #42b983;
+  }
+
+  .mid {
+    background-color: yellowgreen;
   }
   </style>

@@ -16,8 +16,8 @@
           </div>
           <div class="project-content" v-if="this.showSingleProject['Solveur']">
 
-            <p> J'ai réalisé ce projet dans le cadre de mon BUT Informatique en Année Spéciale</p>
-            <p> Mon rôle a été de créer et faire fonctionner le solveur, s'appuyant sur la libraire SAGE </p>
+            <p> J'ai réalisé ce projet dans le cadre de mon BUT Informatique en Année Spéciale, au second semestre. J'ai collaboré au sein d'un groupe de 3 personnes. </p>
+            <p> Mon rôle : concevoir et développer le solveur, dans la partie back-end, basé sur la libraire <a href="https://www.sagemath.org/" target="_blank"> SAGE ( Python )</a>.  </p>
 
           </div> 
         </div>
@@ -31,6 +31,7 @@
           <div class="project-content" v-if="this.showSingleProject['Exercices']">
 
             <p> Ce projet a pris place dans le cadre du cours de programmation avancée en front-end, au premier semestre de BUT3 </p>
+            <p> Utilisation d'Angular afin d'obtenir un rendu dynamique, ergonomique et fonctionnel </p>
 
           </div> 
         </div>
@@ -42,7 +43,8 @@
             <button v-else class="collapsebtn" @click="toggleProject('SiteWeb')"> + </button>
           </div>
           <div class="project-content" v-if="this.showSingleProject['SiteWeb']">
-            <p> Site web responsive, que j'ai développé en binôme au premier semestre de mon BUT Année Spéciale </p>
+            <p> Site web statique, que j'ai développé en binôme au premier semestre de mon BUT Année Spéciale. </p>
+            <p> Usage des langages HTML et CSS, j'ai pris en charge la partie responsive notamment.</p>
           </div> 
         </div>
 
@@ -64,7 +66,8 @@
             <button v-else class="collapsebtn" @click="toggleProject('Annuaire')"> + </button>
           </div>
           <div class="project-content" v-if="this.showSingleProject['Annuaire']"> 
-            <p> Application web destinée au fonctionnement interne de l'entreprise, accès via LDAP ( Lightweight Directory Access Protocol ) au fichier de données </p>
+            <p> Application web destinée au fonctionnement interne de l'entreprise, accès via LDAP ( Lightweight Directory Access Protocol ) au fichier de données.</p>
+            <p> J'ai développé l'application en partant d'une base quasiment vide : authentification, interaction avec la base de données, affichage.</p>
           </div>
         </div>
 
@@ -75,15 +78,16 @@
             <button v-else class="collapsebtn" @click="toggleProject('PropertyGrid')"> + </button>
           </div>
           <div class="project-content" v-if="this.showSingleProject['PropertyGrid']"> 
-            <p> Application web permettant d'afficher les données dynamiquement </p>
+            <p> Application web permettant d'afficher les données dynamiquement.</p>
+            <p> Utilisation de Vue.js afin d'obtenir des composants exportables, les données provenant d'un fichier JSON.</p>
           </div>
         </div>
       </div>
 
-  <p> En bref : j'ai pu développer en utilisant divers outils et langages </p>
+  <p> En synthèse : j'ai pu développer en utilisant divers outils et langages </p>
   <ul>
     <li> Web : VueJS, Flask, Angular </li>
-    <li> Logiciel : C++, C# </li>
+    <li> Logiciel : C++, C#, Python </li>
     <li> Outils : Git, Docker</li>
   </ul>
 </template>
@@ -135,6 +139,10 @@
     justify-content: space-around;
     margin: 10px;
     border: 2px dotted black;
+  }
+  li{
+    display: flex;
+    justify-content: space-around;
   }
   </style>
   
