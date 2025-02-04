@@ -55,6 +55,20 @@
         </tbody>
     </table>
 
+    <p> Ces compétences s'inscrivent dans un contexte lié au BUT, qui vise à développer des compétences plus générales, dont voici quelques exemples : </p>
+    <ul>
+      <li>
+        Élaborer et faire évoluer une application informatique : apprentissage et maîtrise de différents langages de programmation
+      </li>
+      <li> 
+        Travailler et collaborer au sein d'une équipe informatique : réalisation de projets en groupe, gestion de projet et respect des contraintes
+      </li>
+      <li> 
+        Mettre en place des applications informatiques adaptées et efficaces : choix des outils utilisés, et mise en place des bonnes pratiques de développement 
+      </li>
+    </ul>
+    
+
 </template>
   
   <script>
