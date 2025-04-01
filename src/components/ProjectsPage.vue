@@ -73,13 +73,14 @@
 
         <div class="project">
           <div class="project-header">
-            <h4> Application web afin de remplacer une interface, prenant en paramètre un fichier JSON et extrayant les données ( Vuejs, front-end ) </h4>
+            <h4> Application web afin de remplacer une interface ( VueJS, front-end ) </h4>
             <button v-if="this.showMainCategories['PropertyGrid']" class="collapsebtn" @click="toggleProject('PropertyGrid')"> - </button>
             <button v-else class="collapsebtn" @click="toggleProject('PropertyGrid')"> + </button>
           </div>
           <div class="project-content" v-if="this.showSingleProject['PropertyGrid']"> 
             <p> Application web permettant d'afficher les données dynamiquement.</p>
-            <p> Utilisation de Vue.js afin d'obtenir des composants exportables, les données provenant d'un fichier JSON.</p>
+            <p> Utilisation de Vue.js afin d'obtenir des composants exportables.</p>
+            <p> Communication entre un navigateur web géré par WebView ( utilisant l'application VueJS ) et une application C#.</p>
           </div>
         </div>
       </div>
