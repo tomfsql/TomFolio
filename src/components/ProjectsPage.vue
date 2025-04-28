@@ -24,7 +24,7 @@
 
         <div class="project"> 
           <div class="project-header">
-            <h4> Application web de gestion d'exercices ( Angular, front-end et back-end ) </h4>
+            <h4> Application web de gestion d'exercices ( Angular, front-end ) </h4>
             <button v-if="this.showSingleProject['Exercices']" class="collapsebtn" @click="toggleProject('Exercices')"> - </button>
             <button v-else class="collapsebtn" @click="toggleProject('Exercices')"> + </button>
           </div>
@@ -48,6 +48,18 @@
           </div> 
         </div>
 
+        <div class="project" v-if="this.showSingleProject['QDev']"> 
+          <div class="project-header">
+            <h4> Jeu en ligne interactif </h4>
+            <button v-if="this.showSingleProject['QDev']" class="collapsebtn" @click="toggleProject('QDev')"> - </button>
+            <button v-else class="collapsebtn" @click="toggleProject('QDev')"> + </button>
+          </div>
+          <div class="project-content" v-if="this.showSingleProject['SiteWeb']">
+            <p> Sie de jeu développé dans le cadre de la matière Qualité de Développement du S5 de BUT. </p>
+            <p> Usage de Pytest afin de créer les test unitaires liés au pipeline.</p>
+          </div> 
+        </div>
+
       </div>
 
       <div class="title"> 
@@ -61,13 +73,13 @@
       <div class="category" v-if="this.showMainCategories['VP']">
         <div class="project"> 
           <div class="project-header">
-            <h4> Application web de gestion d'un annuaire, via Flask ( back-end en Python, front-end en HTML, connexion à une base de données ) </h4>
+            <h4> Application web de gestion d'un annuaire, via Flask ( back-end en Python, front-end en HTML ) </h4>
             <button v-if="this.showMainCategories['Annuaire']" class="collapsebtn" @click="toggleProject('Annuaire')"> - </button>
             <button v-else class="collapsebtn" @click="toggleProject('Annuaire')"> + </button>
           </div>
           <div class="project-content" v-if="this.showSingleProject['Annuaire']"> 
             <p> Application web destinée au fonctionnement interne de l'entreprise, accès via LDAP ( Lightweight Directory Access Protocol ) au fichier de données.</p>
-            <p> J'ai développé l'application en partant d'une base quasiment vide : authentification, interaction avec la base de données, affichage.</p>
+            <p> J'ai développé l'application en partant d'une base quasiment vide, et j'y ai construit les fonctionnalités suivantes : authentification, interaction avec la base de données, affichage.</p>
           </div>
         </div>
 
@@ -87,8 +99,8 @@
 
   <p> En synthèse : j'ai pu développer en utilisant divers outils et langages </p>
   <ul>
-    <li> Web : VueJS, Flask, Angular </li>
-    <li> Logiciel : C++, C#, Python </li>
+    <li> Développement web : VueJS, Flask, Angular </li>
+    <li> Développement logiciel : C++, C#, Python </li>
     <li> Outils : Git, Docker</li>
   </ul>
 </template>
