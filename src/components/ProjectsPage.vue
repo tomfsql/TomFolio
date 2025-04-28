@@ -2,8 +2,9 @@
   <h1> Mes projets </h1>      
       <div class="title"> 
         <h3> Projets scolaires </h3>
-        <button v-if="this.showMainCategories['IUT']" class="collapsebtn" @click="toggleCategory('IUT')"> - </button>
-        <button v-else class="collapsebtn" @click="toggleCategory('IUT')"> + </button> 
+        <button class="collapsebtn" @click="toggleCategory('IUT')">
+            {{ showMainCategories['IUT'] ? '-' : '+' }}
+        </button>
       </div>
 
       <div class="category" v-if="this.showMainCategories['IUT']">
@@ -11,8 +12,9 @@
         <div class="project"> 
           <div class="project-header">
             <h4> Application web de planification des stages ( back-end en Python avec SAGE pour la résolution d'équation )  </h4>
-            <button v-if="this.showSingleProject['Solveur']" class="collapsebtn" @click="toggleProject('Solveur')"> - </button>
-            <button v-else class="collapsebtn" @click="toggleProject('Solveur')"> + </button>
+            <button class="collapsebtn" @click="toggleProject('Solveur')">
+                {{ showSingleProject['Solveur'] ? '-' : '+' }}
+            </button>
           </div>
           <div class="project-content" v-if="this.showSingleProject['Solveur']">
 
@@ -25,8 +27,9 @@
         <div class="project"> 
           <div class="project-header">
             <h4> Application web de gestion d'exercices ( Angular, front-end ) </h4>
-            <button v-if="this.showSingleProject['Exercices']" class="collapsebtn" @click="toggleProject('Exercices')"> - </button>
-            <button v-else class="collapsebtn" @click="toggleProject('Exercices')"> + </button>
+            <button class="collapsebtn" @click="toggleProject('Exercices')">
+              {{ showSingleProject['Exercices'] ? '-' : '+' }}
+            </button>
           </div>
           <div class="project-content" v-if="this.showSingleProject['Exercices']">
 
@@ -39,8 +42,9 @@
         <div class="project" v-if="this.showSingleProject['SiteWeb']"> 
           <div class="project-header">
             <h4> Site web statique en HTML/CSS afin de présenter les mobilités douces </h4>
-            <button v-if="this.showSingleProject['SiteWeb']" class="collapsebtn" @click="toggleProject('SiteWeb')"> - </button>
-            <button v-else class="collapsebtn" @click="toggleProject('SiteWeb')"> + </button>
+            <button class="collapsebtn" @click="toggleProject('SiteWeb')">
+              {{ showSingleProject['SiteWeb'] ? '-' : '+' }}
+            </button>
           </div>
           <div class="project-content" v-if="this.showSingleProject['SiteWeb']">
             <p> Site web statique, que j'ai développé en binôme au premier semestre de mon BUT Année Spéciale. </p>
@@ -51,10 +55,11 @@
         <div class="project" v-if="this.showSingleProject['QDev']"> 
           <div class="project-header">
             <h4> Jeu en ligne interactif </h4>
-            <button v-if="this.showSingleProject['QDev']" class="collapsebtn" @click="toggleProject('QDev')"> - </button>
-            <button v-else class="collapsebtn" @click="toggleProject('QDev')"> + </button>
+            <button class="collapsebtn" @click="toggleProject('QDev')">
+              {{ showSingleProject['QDev'] ? '-' : '+' }}
+            </button>
           </div>
-          <div class="project-content" v-if="this.showSingleProject['SiteWeb']">
+          <div class="project-content" v-if="this.showSingleProject['QDev']">
             <p> Sie de jeu développé dans le cadre de la matière Qualité de Développement du S5 de BUT. </p>
             <p> Usage de Pytest afin de créer les test unitaires liés au pipeline.</p>
           </div> 
@@ -65,8 +70,9 @@
       <div class="title"> 
 
         <h3> Projets dans le cadre de mon alternance </h3>
-        <button v-if="this.showMainCategories['VP']" class="collapsebtn" @click="toggleCategory('VP')"> - </button>
-        <button v-else class="collapsebtn" @click="toggleCategory('VP')"> + </button>
+        <button class="collapsebtn" @click="toggleCategory('VP')">
+            {{ showSingleProject['VP'] ? '-' : '+' }}
+        </button>
 
       </div>
 
@@ -74,8 +80,9 @@
         <div class="project"> 
           <div class="project-header">
             <h4> Application web de gestion d'un annuaire, via Flask ( back-end en Python, front-end en HTML ) </h4>
-            <button v-if="this.showMainCategories['Annuaire']" class="collapsebtn" @click="toggleProject('Annuaire')"> - </button>
-            <button v-else class="collapsebtn" @click="toggleProject('Annuaire')"> + </button>
+            <button class="collapsebtn" @click="toggleProject('Annuaire')">
+              {{ showSingleProject['Annuaire'] ? '-' : '+' }}
+            </button>
           </div>
           <div class="project-content" v-if="this.showSingleProject['Annuaire']"> 
             <p> Application web destinée au fonctionnement interne de l'entreprise, accès via LDAP ( Lightweight Directory Access Protocol ) au fichier de données.</p>
@@ -86,10 +93,11 @@
         <div class="project">
           <div class="project-header">
             <h4> Application web afin de remplacer une interface ( VueJS, front-end ) </h4>
-            <button v-if="this.showMainCategories['PropertyGrid']" class="collapsebtn" @click="toggleProject('PropertyGrid')"> - </button>
-            <button v-else class="collapsebtn" @click="toggleProject('PropertyGrid')"> + </button>
+            <button class="collapsebtn" @click="toggleProject('Annuaire')">
+              {{ showSingleProject['Annuaire'] ? '-' : '+' }}
+            </button>
           </div>
-          <div class="project-content" v-if="this.showSingleProject['PropertyGrid']"> 
+          <div class="project-content" v-if="this.showSingleProject['Annuaire']"> 
             <p> Application web permettant d'afficher les données dynamiquement.</p>
             <p> Utilisation de Vue.js afin d'obtenir des composants exportables.</p>
             <p> Communication entre un navigateur web géré par WebView ( utilisant l'application VueJS ) et une application C#.</p>
@@ -111,7 +119,7 @@
   data(){
     return {
       showMainCategories: {"IUT": true, "VP": true},
-      showSingleProject: {"Solveur": true, "Exercices": true, "SiteWeb": true, "Annuaire": true, "PropertyGrid": true},
+      showSingleProject: {"Solveur": true, "Exercices": true, "SiteWeb": true, "Annuaire": true, "PropertyGrid": true, 'QDev':true},
     };
   },
   methods : {
