@@ -1,115 +1,97 @@
 <template>
-    <h1> Mes compétences </h1>
+  <div>
+    <h1>Mes compétences</h1>
 
-    <p> Tout au long de mon cursus scolaire, j'ai pu développer diverses compétences techniques, dans les domaines suivants : </p>
-  
-    <table>
-        <thead>
-            <tr>
-                <td> Nom </td>
-                <td> Java</td>
-                <td> C </td>
-                <td> JavaScript/TypeScript</td>
-                <td> Python </td>
-                <td> HTML/CSS </td>
-                <td> PHP </td>
-                <td> Angular </td>
-                <td> Vue.js </td>
-                <td> Flask </td>
-                <td> PL/SQL </td>
-                <td> MongoDB </td>
-                <td> Neo4J</td>
-                <td> Git </td>
-                <td> Docker </td>
-                <td> Bash </td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td> Usage depuis </td>
-                <td colspan="2"> 2021 </td>
-                <td> 2024 </td>
-                <td colspan="2"> 2023 </td>
-                <td colspan="7"> 2024</td>
-                <td> 2021</td>
-                <td colspan="2"> 2024</td>
-            </tr>
-            <tr>
-                <td> Catégorie </td>
-                <td colspan="6"> Langage de programmation </td>
-                <td colspan="3"> Framework de développement </td>
-                <td colspan="3"> Langage de manipulation de Base de Données </td>
-                <td colspan="3"> Outil/langage système </td>
-            </tr>
-            <tr>
-                <td> Maîtrise </td>
-                <td class="good"> Bonne </td>
-                <td class="mid"> Moyenne </td>
-                <td class="good" colspan="3"> Bonne </td>
-                <td class="mid"> Moyenne </td>
-                <td class="good" colspan="4"> Bonne </td>
-                <td class="mid" colspan="2"> Moyenne</td>
-                <td class="good"> Bonne </td>
-                <td class="mid" colspan="2"> Moyenne </td>
-            </tr>
-        </tbody>
-    </table>
+    <p>
+      Tout au long de mon cursus scolaire, j'ai pu développer diverses compétences techniques, présentées ci-dessous :
+    </p>
 
-    <p> Ces compétences s'inscrivent dans un contexte lié au BUT, qui vise à développer des compétences plus générales, dont voici quelques exemples : </p>
+    <input v-model="search" placeholder="Rechercher une compétence..." />
+
+    <div class="grid">
+      <div
+        class="card"
+        v-for="(tech, index) in sortedCompetences"
+        :key="'main-' + index"
+        :class="{ good: tech.maitrise === 'Bonne', mid: tech.maitrise === 'Moyenne' }"
+      >
+        <h3>{{ tech.nom }}</h3>
+        <p><strong>Depuis :</strong> {{ tech.usageDepuis }}</p>
+        <p><strong>Catégorie :</strong> {{ tech.categorie }}</p>
+        <p><strong>Maîtrise :</strong> {{ tech.maitrise }}</p>
+      </div>
+    </div>
+
+    <h2>Outils et langages système</h2>
+    <div class="grid">
+      <div
+        class="card"
+        v-for="(tech, index) in sortedCompetencesOutils"
+        :key="'outil-' + index"
+        :class="{ good: tech.maitrise === 'Bonne', mid: tech.maitrise === 'Moyenne' }"
+      >
+        <h3>{{ tech.nom }}</h3>
+        <p><strong>Depuis :</strong> {{ tech.usageDepuis }}</p>
+        <p><strong>Catégorie :</strong> {{ tech.categorie }}</p>
+        <p><strong>Maîtrise :</strong> {{ tech.maitrise }}</p>
+      </div>
+    </div>
+
+    <p>
+      Ces compétences s'inscrivent dans un contexte lié au BUT, qui vise à développer des compétences plus générales :
+    </p>
     <ul>
-      <li>
-        Élaborer et faire évoluer une application informatique : apprentissage et maîtrise de différents langages de programmation
-      </li>
-      <li> 
-        Travailler et collaborer au sein d'une équipe informatique : réalisation de projets en groupe, gestion de projet et respect des contraintes
-      </li>
-      <li> 
-        Mettre en place des applications informatiques adaptées et efficaces : choix des outils utilisés, et mise en place des bonnes pratiques de développement 
-      </li>
+      <li>Élaborer et faire évoluer une application informatique</li>
+      <li>Travailler et collaborer au sein d'une équipe informatique</li>
+      <li>Mettre en place des applications informatiques adaptées et efficaces</li>
     </ul>
-    
-
+  </div>
 </template>
-  
-  <script>
-  export default {
-    name: 'HomePage',
-  }
-  </script>
-  
-  <!-- Add "scoped" attribute to limit CSS to this component only -->
-  <style scoped>
-  h3 {
-    margin: 40px 0 0;
-  }
-  ul {
-    list-style-type:circle;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-  }
-  li {
-    margin: 0 10px;
-  }
-  a {
-    color: #42b983;
-  }
-  table {
-    width: 100%;
-  }
-  table, thead, tbody, tr, tbody + tr + td{
-    border: 1px solid black;
-  }
-  td{
-    width: fit-content;
-    border: 1px dotted blue ;
-  }
 
-  .good {
-    background-color: #42b983;
+<script>
+export default {
+  name: 'HomePage',
+  data() {
+    return {
+      competences: [],
+      search: ''
+    }
+  },
+  computed: {
+    sortedCompetences() {
+      const term = this.search.toLowerCase()
+      return this.competences
+        .filter(tech => !tech.categorie.toLowerCase().includes('outil'))
+        .filter(tech =>
+          tech.nom.toLowerCase().includes(term) ||
+          tech.categorie.toLowerCase().includes(term) ||
+          tech.maitrise.toLowerCase().includes(term)
+        )
+        .sort((a, b) => {
+          if (a.maitrise !== b.maitrise) {
+            return a.maitrise === 'Bonne' ? -1 : 1
+          }
+          return a.nom.localeCompare(b.nom)
+        })
+    },
+    sortedCompetencesOutils() {
+      return this.competences
+        .filter(tech => tech.categorie.toLowerCase().includes('outil'))
+        .sort((a, b) => {
+          if (a.maitrise !== b.maitrise) {
+            return a.maitrise === 'Bonne' ? -1 : 1
+          }
+          return a.nom.localeCompare(b.nom)
+        })
+    }
+  },
+  mounted() {
+    fetch('/competences.json')
+      .then(res => res.json())
+      .then(data => {
+        this.competences = data
+      })
+      .catch(err => console.error('Erreur de chargement des compétences :', err))
   }
-
-  .mid {
-    background-color: yellowgreen;
-  }
-  </style>
+}
+</script>

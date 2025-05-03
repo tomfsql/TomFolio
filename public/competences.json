@@ -1,0 +1,92 @@
+[
+  {
+    "nom": "Java",
+    "usageDepuis": "2021",
+    "categorie": "Langage de programmation",
+    "maitrise": "Bonne"
+  },
+  {
+    "nom": "C",
+    "usageDepuis": "2021",
+    "categorie": "Langage de programmation",
+    "maitrise": "Moyenne"
+  },
+  {
+    "nom": "JavaScript/TypeScript",
+    "usageDepuis": "2024",
+    "categorie": "Langage de programmation",
+    "maitrise": "Bonne"
+  },
+  {
+    "nom": "Python",
+    "usageDepuis": "2023",
+    "categorie": "Langage de programmation",
+    "maitrise": "Bonne"
+  },
+  {
+    "nom": "HTML/CSS",
+    "usageDepuis": "2023",
+    "categorie": "Langage de programmation",
+    "maitrise": "Bonne"
+  },
+  {
+    "nom": "PHP",
+    "usageDepuis": "2024",
+    "categorie": "Langage de programmation",
+    "maitrise": "Basique"
+  },
+  {
+    "nom": "Angular",
+    "usageDepuis": "2024",
+    "categorie": "Framework web",
+    "maitrise": "Bonne"
+  },
+  {
+    "nom": "Vue.js",
+    "usageDepuis": "2024",
+    "categorie": "Framework web",
+    "maitrise": "Bonne"
+  },
+  {
+    "nom": "Flask",
+    "usageDepuis": "2024",
+    "categorie": "Framework dweb",
+    "maitrise": "Bonne"
+  },
+  {
+    "nom": "PL/SQL",
+    "usageDepuis": "2024",
+    "categorie": "Langage de manipulation de Base de Données",
+    "maitrise": "Moyenne"
+  },
+  {
+    "nom": "MongoDB",
+    "usageDepuis": "2024",
+    "categorie": "Langage de manipulation de Base de Données",
+    "maitrise": "Moyenne"
+  },
+  {
+    "nom": "Neo4J",
+    "usageDepuis": "2021",
+    "categorie": "Langage de manipulation de Base de Données",
+    "maitrise": "Moyenne"
+  },
+  {
+    "nom": "Git",
+    "usageDepuis": "2024",
+    "categorie": "Outil",
+    "maitrise": "Bonne"
+  },
+  {
+    "nom": "Docker",
+    "usageDepuis": "2024",
+    "categorie": "Outil",
+    "maitrise": "Moyenne"
+  },
+  {
+    "nom": "Bash",
+    "usageDepuis": "2024",
+    "categorie": "Langage système",
+    "maitrise": "Moyenne"
+  }
+]
