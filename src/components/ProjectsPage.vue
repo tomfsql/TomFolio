@@ -132,38 +132,4 @@
   }
   }
   </script>
-
-  <style scoped>
-
-  h3 {
-    text-align: left;
-  }
-
-
-  .collapsebtn{
-    color: black;
-    height: fit-content;
-  }
-
-  .title > button, .project-header > button {
-    margin-top: 20px;
-  }
-
-  .title, .project-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-  .project, .category {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin: 10px;
-    border: 2px dotted black;
-  }
-  li{
-    display: flex;
-    justify-content: space-around;
-  }
-  </style>
   
