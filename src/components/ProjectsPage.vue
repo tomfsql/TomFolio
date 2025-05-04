@@ -18,8 +18,8 @@
           </div>
           <div class="project-content" v-if="this.showSingleProject['Solveur']">
 
-            <p> J'ai réalisé ce projet dans le cadre de mon BUT Informatique en Année Spéciale, au second semestre. J'ai collaboré au sein d'un groupe de 3 personnes. </p>
-            <p> Mon rôle : concevoir et développer le solveur, dans la partie back-end, basé sur la libraire <a href="https://www.sagemath.org/" target="_blank"> SAGE ( Python )</a>.  </p>
+            <p> J'ai réalisé ce projet dans le cadre de mon BUT Informatique en Année Spéciale, au second semestre, au sein d'un groupe de 3 personnes. </p>
+            <p> Mon rôle : concevoir et développer le solveur, utilisé dans la partie back-end, basé sur la libraire <a href="https://www.sagemath.org/" target="_blank"> SAGE ( Python )</a>.  </p>
 
           </div> 
         </div>
@@ -48,7 +48,7 @@
           </div>
           <div class="project-content" v-if="this.showSingleProject['SiteWeb']">
             <p> Site web statique, que j'ai développé en binôme au premier semestre de mon BUT Année Spéciale. </p>
-            <p> Usage des langages HTML et CSS, j'ai pris en charge la partie responsive notamment.</p>
+            <p> Usage des langages HTML et CSS, j'ai pris en charge notamment la partie responsive.</p>
           </div> 
         </div>
 
@@ -60,7 +60,7 @@
             </button>
           </div>
           <div class="project-content" v-if="this.showSingleProject['QDev']">
-            <p> Sie de jeu développé dans le cadre de la matière Qualité de Développement du S5 de BUT. </p>
+            <p> Site de jeu développé dans le cadre de la matière Qualité de Développement du S5 de BUT. </p>
             <p> Usage de Pytest afin de créer les test unitaires liés au pipeline.</p>
           </div> 
         </div>
@@ -86,13 +86,13 @@
           </div>
           <div class="project-content" v-if="this.showSingleProject['Annuaire']"> 
             <p> Application web destinée au fonctionnement interne de l'entreprise, accès via LDAP ( Lightweight Directory Access Protocol ) au fichier de données.</p>
-            <p> J'ai développé l'application en partant d'une base quasiment vide, et j'y ai construit les fonctionnalités suivantes : authentification, interaction avec la base de données, affichage.</p>
+            <p> J'ai développé l'application en partant d'une base quasiment vide, et j'y ai ajouté les fonctionnalités suivantes : authentification, interactions avec la base de données ( CRUD ), affichage.</p>
           </div>
         </div>
 
         <div class="project">
           <div class="project-header">
-            <h4> Application web afin de remplacer une interface ( VueJS, front-end ) </h4>
+            <h4> Application web afin de remplacer une interface présente dans le logiciel</h4>
             <button class="collapsebtn" @click="toggleProject('Annuaire')">
               {{ showSingleProject['Annuaire'] ? '-' : '+' }}
             </button>

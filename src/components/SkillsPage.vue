@@ -13,12 +13,15 @@
         class="card"
         v-for="(tech, index) in sortedCompetences"
         :key="'main-' + index"
-        :class="{ good: tech.maitrise === 'Bonne', mid: tech.maitrise === 'Moyenne' }"
+        :class="{ good: tech.maitrise === 'Bonne', mid: tech.maitrise === 'Moyenne',begin: tech.maitrise === 'Basique' }"
       >
         <h3>{{ tech.nom }}</h3>
         <p><strong>Depuis :</strong> {{ tech.usageDepuis }}</p>
         <p><strong>Catégorie :</strong> {{ tech.categorie }}</p>
         <p><strong>Maîtrise :</strong> {{ tech.maitrise }}</p>
+        <p v-if="tech.expanded && tech.details">
+          <strong>Détails :</strong> {{ tech.details }}
+        </p>
       </div>
     </div>
 
@@ -28,7 +31,7 @@
         class="card"
         v-for="(tech, index) in sortedCompetencesOutils"
         :key="'outil-' + index"
-        :class="{ good: tech.maitrise === 'Bonne', mid: tech.maitrise === 'Moyenne' }"
+        :class="{ good: tech.maitrise === 'Bonne', mid: tech.maitrise === 'Moyenne',begin: tech.maitrise === 'Basique'  }"
       >
         <h3>{{ tech.nom }}</h3>
         <p><strong>Depuis :</strong> {{ tech.usageDepuis }}</p>
@@ -51,11 +54,11 @@
 <script>
 export default {
   name: 'HomePage',
-  data() {
+data() {
     return {
-      competences: [],
-      search: ''
-    }
+      search: "",
+      competences: this.competencesData.map(c => ({ ...c, expanded: false }))
+    };
   },
   computed: {
     sortedCompetences() {
@@ -85,11 +88,16 @@ export default {
         })
     }
   },
+  methods: {
+    toggleExpand(competence) {
+      competence.expanded = !competence.expanded;
+    }
+  },
   mounted() {
     fetch('/competences.json')
       .then(res => res.json())
       .then(data => {
-        this.competences = data
+        this.competencesData = data
       })
       .catch(err => console.error('Erreur de chargement des compétences :', err))
   }
