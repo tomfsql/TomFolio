@@ -7,7 +7,7 @@
     </p>
 
     <button @click="toggleSortOrder">
-      Trier par {{ sortBy === 'categorie' ? 'maîtrise' : 'catégorie' }}
+      Trier par {{ sortBy === 'catégorie' ? 'maîtrise' : 'catégorie' }}
     </button>
 
     <input v-model="search" placeholder="Rechercher une compétence..." />
@@ -74,7 +74,8 @@ export default {
 data() {
     return {
       search: "",
-      competences: []
+      competences: [],
+      sortBy: 'catégorie'
     };
   },
   computed: {
@@ -89,9 +90,10 @@ data() {
         );
 
       return competencesFiltered.sort((a, b) => {
-        if (this.sortBy === 'categorie') {
+        if (this.sortBy === 'catégorie') {
           return a.categorie.localeCompare(b.categorie);
-        } else if (this.sortBy === 'maitrise') {
+        } 
+        else if (this.sortBy === 'maîtrise') {
           if (a.maitrise !== b.maitrise) {
             return a.maitrise === 'Bonne' ? -1 : 1;
           }
@@ -114,6 +116,9 @@ data() {
     toggleExpand(competence) {
       competence.expanded = !competence.expanded;
     }
+  },
+  toggleSortOrder() {
+    this.sortBy = this.sortBy === 'catégorie' ? 'maîtrise' : 'catégorie';
   },
   mounted() {
     fetch('/competences.json')
