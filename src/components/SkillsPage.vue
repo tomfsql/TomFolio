@@ -115,10 +115,10 @@ data() {
   methods: {
     toggleExpand(competence) {
       competence.expanded = !competence.expanded;
-    }
-  },
-  toggleSortOrder() {
-    this.sortBy = this.sortBy === 'catégorie' ? 'maîtrise' : 'catégorie';
+    },
+    toggleSortOrder() {
+      this.sortBy = this.sortBy === 'catégorie' ? 'maîtrise' : 'catégorie';
+    },
   },
   mounted() {
     fetch('/competences.json')
