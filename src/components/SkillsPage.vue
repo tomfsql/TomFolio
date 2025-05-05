@@ -15,7 +15,7 @@
 
     <div>
       <div v-if="sortedCompetences.length">
-        <div class="grid">
+        <div class="skillgrid">
           <div
             class="card"
             v-for="(tech, index) in sortedCompetences"
@@ -39,7 +39,7 @@
     </div>
 
     <h2>Outils et langages système</h2>
-    <div class="grid">
+    <div class="toolgrid">
       <div
         class="card"
         v-for="(tech, index) in sortedCompetencesOutils"
@@ -75,7 +75,12 @@ data() {
     return {
       search: "",
       competences: [],
-      sortBy: 'catégorie'
+      sortBy: 'catégorie',
+      niveaux : {
+        "Bonne": 3,
+        "Moyenne": 2,
+        "Basique": 1
+      }
     };
   },
   computed: {
@@ -92,13 +97,14 @@ data() {
       return competencesFiltered.sort((a, b) => {
         if (this.sortBy === 'catégorie') {
           return a.categorie.localeCompare(b.categorie);
-        } 
-        else if (this.sortBy === 'maîtrise') {
-          if (a.maitrise !== b.maitrise) {
-            return a.maitrise === 'Bonne' ? -1 : 1;
+        } else if (this.sortBy === 'maîtrise') {
+          const scoreA = this.niveaux[a.maitrise] || 0;
+          const scoreB = this.niveaux[b.maitrise] || 0;
+          if (scoreA !== scoreB) {
+            return scoreB - scoreA;
           }
           return a.nom.localeCompare(b.nom);
-        }
+  }
       });
     },
     sortedCompetencesOutils() {
@@ -115,6 +121,7 @@ data() {
   methods: {
     toggleExpand(competence) {
       competence.expanded = !competence.expanded;
+      console.log(`${competence.nom} est maintenant ${competence.expanded ? 'ouvert' : 'fermé'}`);
     },
     toggleSortOrder() {
       this.sortBy = this.sortBy === 'catégorie' ? 'maîtrise' : 'catégorie';
@@ -124,8 +131,7 @@ data() {
     fetch('/competences.json')
       .then(res => res.json())
       .then(data => {
-        this.competences = data.map(c => ({ ...c, expanded: false }))
-      })
+        this.competences = data.map(c => ({ ...c, expanded: false }));      })
       .catch(err => console.error('Erreur de chargement des compétences :', err))
   }
 }
