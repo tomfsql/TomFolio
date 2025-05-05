@@ -3,7 +3,7 @@
     <h1>Mes compétences</h1>
 
     <p>
-      Tout au long de mon cursus scolaire, j'ai pu développer diverses compétences techniques, présentées ci-dessous :
+      Tout au long de mon cursus scolaire, j'ai pu développer diverses compétences techniques dans des langages et outils, présentés ci-dessous :
     </p>
 
     <button @click="toggleSortOrder">
