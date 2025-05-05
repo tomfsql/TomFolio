@@ -23,19 +23,20 @@ input {
 .card {
   flex: 1 0 200px;
   border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 12px;
+  padding: 1rem;
   box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-  background-color: #f9f9f9;
-  transition: all 0.3s ease;
+  border-radius: 10px;
+  background: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   overflow: hidden;
 }
 
 .card.expanded {
   transform: scale(1.05);
-  background-color: #eefdf8;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  position: relative;
 }
 
 .card h3 {

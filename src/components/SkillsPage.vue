@@ -31,12 +31,16 @@
         class="card"
         v-for="(tech, index) in sortedCompetencesOutils"
         :key="'outil-' + index"
-        :class="{ good: tech.maitrise === 'Bonne', mid: tech.maitrise === 'Moyenne',begin: tech.maitrise === 'Basique'  }"
+        :class="{ good: tech.maitrise === 'Bonne', mid: tech.maitrise === 'Moyenne',begin: tech.maitrise === 'Basique',expanded: tech.expanded }"
+        @click="toggleExpand(tech)"
       >
         <h3>{{ tech.nom }}</h3>
         <p><strong>Depuis :</strong> {{ tech.usageDepuis }}</p>
         <p><strong>Catégorie :</strong> {{ tech.categorie }}</p>
         <p><strong>Maîtrise :</strong> {{ tech.maitrise }}</p>
+        <p v-if="tech.expanded && tech.details">
+          {{ tech.details }}
+        </p>
       </div>
     </div>
 
