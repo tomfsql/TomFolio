@@ -6,23 +6,36 @@
       Tout au long de mon cursus scolaire, j'ai pu développer diverses compétences techniques, présentées ci-dessous :
     </p>
 
+    <button @click="toggleSortOrder">
+      Trier par {{ sortBy === 'categorie' ? 'maîtrise' : 'catégorie' }}
+    </button>
+
     <input v-model="search" placeholder="Rechercher une compétence..." />
 
-    <div class="grid">
-      <div
-        class="card"
-        v-for="(tech, index) in sortedCompetences"
-        :key="'main-' + index"
-        :class="{ good: tech.maitrise === 'Bonne', mid: tech.maitrise === 'Moyenne',begin: tech.maitrise === 'Basique' }"
-      >
-        <h3>{{ tech.nom }}</h3>
-        <p><strong>Depuis :</strong> {{ tech.usageDepuis }}</p>
-        <p><strong>Catégorie :</strong> {{ tech.categorie }}</p>
-        <p><strong>Maîtrise :</strong> {{ tech.maitrise }}</p>
-        <p v-if="tech.expanded && tech.details">
-          <strong>Détails :</strong> {{ tech.details }}
-        </p>
+
+    <div>
+      <div v-if="sortedCompetences.length">
+        <div class="grid">
+          <div
+            class="card"
+            v-for="(tech, index) in sortedCompetences"
+            :key="'main-' + index"
+            :class="{
+              good: tech.maitrise === 'Bonne',
+              mid: tech.maitrise === 'Moyenne',
+              begin: tech.maitrise === 'Basique'
+            }">
+              <h3>{{ tech.nom }}</h3>
+              <p><strong>Depuis :</strong> {{ tech.usageDepuis }}</p>
+              <p><strong>Catégorie :</strong> {{ tech.categorie }}</p>
+              <p><strong>Maîtrise :</strong> {{ tech.maitrise }}</p>
+              <p v-if="tech.expanded && tech.details">
+                <strong>Détails :</strong> {{ tech.details }}
+              </p>
+          </div>
+        </div>
       </div>
+      <div v-else>Chargement ou aucune compétence trouvée.</div>
     </div>
 
     <h2>Outils et langages système</h2>
@@ -66,20 +79,25 @@ data() {
   },
   computed: {
     sortedCompetences() {
-      const term = this.search.toLowerCase()
-      return this.competences
+      const term = this.search.toLowerCase();
+      const competencesFiltered = this.competences
         .filter(tech => !tech.categorie.toLowerCase().includes('outil'))
         .filter(tech =>
           tech.nom.toLowerCase().includes(term) ||
           tech.categorie.toLowerCase().includes(term) ||
           tech.maitrise.toLowerCase().includes(term)
-        )
-        .sort((a, b) => {
+        );
+
+      return competencesFiltered.sort((a, b) => {
+        if (this.sortBy === 'categorie') {
+          return a.categorie.localeCompare(b.categorie);
+        } else if (this.sortBy === 'maitrise') {
           if (a.maitrise !== b.maitrise) {
-            return a.maitrise === 'Bonne' ? -1 : 1
+            return a.maitrise === 'Bonne' ? -1 : 1;
           }
-          return a.nom.localeCompare(b.nom)
-        })
+          return a.nom.localeCompare(b.nom);
+        }
+      });
     },
     sortedCompetencesOutils() {
       return this.competences
