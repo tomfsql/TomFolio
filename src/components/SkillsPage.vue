@@ -57,7 +57,7 @@ export default {
 data() {
     return {
       search: "",
-      competences: this.competencesData.map(c => ({ ...c, expanded: false }))
+      competences: []
     };
   },
   computed: {
@@ -97,7 +97,7 @@ data() {
     fetch('/competences.json')
       .then(res => res.json())
       .then(data => {
-        this.competencesData = data
+        this.competences = data.map(c => ({ ...c, expanded: false }))
       })
       .catch(err => console.error('Erreur de chargement des compétences :', err))
   }
