@@ -116,6 +116,23 @@ li {
   justify-content: space-evenly;
 }
 
+.expand-enter-active, .expand-leave-active {
+  transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+  overflow: hidden;
+}
+
+.expand-enter-from, .expand-leave-to {
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+}
+
+.expand-enter-to, .expand-leave-from {
+  max-height: 500px;
+  opacity: 1;
+  padding: 0.5rem 0;
+}
+
 @media (max-width: 600px) {
   .title, .project-header, .navbar {
     flex-direction: column;

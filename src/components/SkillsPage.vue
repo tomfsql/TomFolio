@@ -31,9 +31,14 @@
               <p><strong>Depuis :</strong> {{ tech.usageDepuis }}</p>
               <p><strong>Catégorie :</strong> {{ tech.categorie }}</p>
               <p><strong>Maîtrise :</strong> {{ tech.maitrise }}</p>
-              <p v-if="tech.expanded && tech.details">
-                <strong>Détails :</strong> {{ tech.details }}
-              </p>
+              <transition name="expand">
+                <p v-if="tech.expanded && tech.details">
+                  <strong>Détails :</strong> {{ tech.details }}
+                </p>
+                <p v-else-if="!tech.expanded && tech.details">
+                  Plus d'informations ?
+                </p>
+              </transition>
           </div>
         </div>
       </div>
