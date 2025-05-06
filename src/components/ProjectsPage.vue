@@ -1,135 +1,102 @@
 <template>
-  <h1> Mes projets </h1>      
-      <div class="title"> 
-        <h3> Projets scolaires </h3>
-        <button class="collapsebtn" @click="toggleCategory('IUT')">
-            {{ showMainCategories['IUT'] ? '-' : '+' }}
-        </button>
-      </div>
+  <div>
+    <h1>Mes Projets</h1>
 
-      <div class="category" v-if="this.showMainCategories['IUT']">
+    <div v-for="(projets, categorie) in groupedProjets" :key="categorie">
+      <h2>{{ categorie }}</h2>
 
-        <div class="project"> 
-          <div class="project-header">
-            <h4> Application web de planification des stages ( back-end en Python avec SAGE pour la résolution d'équation )  </h4>
-            <button class="collapsebtn" @click="toggleProject('Solveur')">
-                {{ showSingleProject['Solveur'] ? '-' : '+' }}
+      <button @click="toggleCategory(categorie)">
+        {{ showCategories[categorie] ? 'Masquer' : 'Afficher' }} les projets
+      </button>
+
+      <div v-if="showCategories[categorie]">
+        <div v-for="projet in projets" :key="projet.id">
+          <div class="card">
+            <h3>{{ projet.titre }}</h3>
+            <p><strong>Date :</strong> {{ projet.date }}</p>
+            <p><strong>Technologies :</strong> {{ projet.techno }}</p>
+            <p><strong>Détails :</strong></p>
+            <ul>
+              <li v-for="detail in projet.details" :key="detail">{{ detail }}</li>
+            </ul>
+            <button @click="toggleProject(projet.id)">
+              {{ showProjects[projet.id] ? 'Masquer' : 'Afficher' }} le projet
             </button>
-          </div>
-          <div class="project-content" v-if="this.showSingleProject['Solveur']">
 
-            <p> J'ai réalisé ce projet dans le cadre de mon BUT Informatique en Année Spéciale, au second semestre, au sein d'un groupe de 3 personnes. </p>
-            <p> Mon rôle : concevoir et développer le solveur, utilisé dans la partie back-end, basé sur la libraire <a href="https://www.sagemath.org/" target="_blank"> SAGE ( Python )</a>.  </p>
-
-          </div> 
-        </div>
-
-        <div class="project"> 
-          <div class="project-header">
-            <h4> Application web de gestion d'exercices ( Angular, front-end ) </h4>
-            <button class="collapsebtn" @click="toggleProject('Exercices')">
-              {{ showSingleProject['Exercices'] ? '-' : '+' }}
-            </button>
-          </div>
-          <div class="project-content" v-if="this.showSingleProject['Exercices']">
-
-            <p> Ce projet a pris place dans le cadre du cours de programmation avancée en front-end, au premier semestre de BUT3 </p>
-            <p> Utilisation d'Angular afin d'obtenir un rendu dynamique, ergonomique et fonctionnel </p>
-
-          </div> 
-        </div>
-
-        <div class="project" v-if="this.showSingleProject['SiteWeb']"> 
-          <div class="project-header">
-            <h4> Site web statique en HTML/CSS afin de présenter les mobilités douces </h4>
-            <button class="collapsebtn" @click="toggleProject('SiteWeb')">
-              {{ showSingleProject['SiteWeb'] ? '-' : '+' }}
-            </button>
-          </div>
-          <div class="project-content" v-if="this.showSingleProject['SiteWeb']">
-            <p> Site web statique, que j'ai développé en binôme au premier semestre de mon BUT Année Spéciale. </p>
-            <p> Usage des langages HTML et CSS, j'ai pris en charge notamment la partie responsive.</p>
-          </div> 
-        </div>
-
-        <div class="project" v-if="this.showSingleProject['QDev']"> 
-          <div class="project-header">
-            <h4> Jeu en ligne interactif </h4>
-            <button class="collapsebtn" @click="toggleProject('QDev')">
-              {{ showSingleProject['QDev'] ? '-' : '+' }}
-            </button>
-          </div>
-          <div class="project-content" v-if="this.showSingleProject['QDev']">
-            <p> Site de jeu développé dans le cadre de la matière Qualité de Développement du S5 de BUT. </p>
-            <p> Usage de Pytest afin de créer les test unitaires liés au pipeline.</p>
-          </div> 
-        </div>
-
-      </div>
-
-      <div class="title"> 
-
-        <h3> Projets dans le cadre de mon alternance </h3>
-        <button class="collapsebtn" @click="toggleCategory('VP')">
-            {{ showSingleProject['VP'] ? '-' : '+' }}
-        </button>
-
-      </div>
-
-      <div class="category" v-if="this.showMainCategories['VP']">
-        <div class="project"> 
-          <div class="project-header">
-            <h4> Application web de gestion d'un annuaire, via Flask ( back-end en Python, front-end en HTML ) </h4>
-            <button class="collapsebtn" @click="toggleProject('Annuaire')">
-              {{ showSingleProject['Annuaire'] ? '-' : '+' }}
-            </button>
-          </div>
-          <div class="project-content" v-if="this.showSingleProject['Annuaire']"> 
-            <p> Application web destinée au fonctionnement interne de l'entreprise, accès via LDAP ( Lightweight Directory Access Protocol ) au fichier de données.</p>
-            <p> J'ai développé l'application en partant d'une base quasiment vide, et j'y ai ajouté les fonctionnalités suivantes : authentification, interactions avec la base de données ( CRUD ), affichage.</p>
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="project-header">
-            <h4> Application web afin de remplacer une interface présente dans le logiciel</h4>
-            <button class="collapsebtn" @click="toggleProject('Annuaire')">
-              {{ showSingleProject['Annuaire'] ? '-' : '+' }}
-            </button>
-          </div>
-          <div class="project-content" v-if="this.showSingleProject['Annuaire']"> 
-            <p> Application web permettant d'afficher les données dynamiquement.</p>
-            <p> Utilisation de Vue.js afin d'obtenir des composants exportables.</p>
-            <p> Communication entre un navigateur web géré par WebView ( utilisant l'application VueJS ) et une application C#.</p>
+            <div v-if="showProjects[projet.id]">
+              <p><strong>Catégorie :</strong> {{ projet.categorie }}</p>
+            </div>
           </div>
         </div>
       </div>
-
-  <p> En synthèse : j'ai pu développer en utilisant divers outils et langages </p>
-  <ul>
-    <li> Développement web : VueJS, Flask, Angular </li>
-    <li> Développement logiciel : C++, C#, Python </li>
-    <li> Outils : Git, Docker</li>
-  </ul>
+    </div>
+  </div>
 </template>
-  
-  <script>
-  export default {
-    name: 'HomePage',
-  data(){
+
+<script>
+export default {
+  name: 'ProjectsPage',
+  data() {
     return {
-      showMainCategories: {"IUT": true, "VP": true},
-      showSingleProject: {"Solveur": true, "Exercices": true, "SiteWeb": true, "Annuaire": true, "PropertyGrid": true, 'QDev':true},
+      projetsScolaires: [],
+      projetsAlternance: [],
+      showCategories: {},
+      showProjects: {}
     };
   },
-  methods : {
-    toggleCategory(category) {
-        this.showMainCategories[category] = !this.showMainCategories[category];
-    },
-    toggleProject(project) {
-      this.showSingleProject[project] = !this.showSingleProject[project];
-    },
+  computed: {
+    groupedProjets() {
+      const grouped = {};
+
+      this.projetsScolaires.forEach(p => {
+        if (!grouped[p.categorie]) {
+          grouped[p.categorie] = [];
+        }
+        grouped[p.categorie].push(p);
+      });
+
+      this.projetsAlternance.forEach(p => {
+        if (!grouped[p.categorie]) {
+          grouped[p.categorie] = [];
+        }
+        grouped[p.categorie].push(p);
+      });
+
+      return grouped;
+    }
+  },
+methods: {
+  toggleCategory(cat) {
+    this.showCategories[cat] = !this.showCategories[cat];
+  },
+  toggleProject(id) {
+    this.showProjects[id] = !this.showProjects[id];
   }
-  }
-  </script>
-  
+},
+mounted() {
+  fetch('/projets.json')
+    .then(res => res.json())
+    .then(data => {
+      if (data && data['Projets scolaires'] && data['Projets réalisés lors de mon alternance']) {
+        this.projetsScolaires = data['Projets scolaires'];
+        this.projetsAlternance = data['Projets réalisés lors de mon alternance'];
+        this.projetsIUT = this.projetsScolaires.filter(p => p.categorie === 'IUT');
+        this.projetsVP = this.projetsAlternance.filter(p => p.categorie === 'VP');
+        this.showProjects = this.projetsScolaires.concat(this.projetsAlternance).reduce((acc, p) => {
+          acc[p.id] = true;
+          return acc;
+        }, {});
+        this.showCategories = this.projetsScolaires.concat(this.projetsAlternance).reduce((acc, p) => {
+          acc[p.categorie] = true;
+          return acc;
+        }, {});
+      } else {
+        console.error("Erreur: la structure des données est incorrecte.");
+      }
+    })
+    .catch(err => console.error("Erreur de chargement des projets :", err));
+}
+
+
+};
+</script>
