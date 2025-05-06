@@ -24,7 +24,9 @@
               good: tech.maitrise === 'Bonne',
               mid: tech.maitrise === 'Moyenne',
               begin: tech.maitrise === 'Basique'
-            }">
+            }"
+            @click="toggleExpand(tech)"
+            >
               <h3>{{ tech.nom }}</h3>
               <p><strong>Depuis :</strong> {{ tech.usageDepuis }}</p>
               <p><strong>Catégorie :</strong> {{ tech.categorie }}</p>
@@ -121,7 +123,6 @@ data() {
   methods: {
     toggleExpand(competence) {
       competence.expanded = !competence.expanded;
-      console.log(`${competence.nom} est maintenant ${competence.expanded ? 'ouvert' : 'fermé'}`);
     },
     toggleSortOrder() {
       this.sortBy = this.sortBy === 'catégorie' ? 'maîtrise' : 'catégorie';
@@ -131,7 +132,8 @@ data() {
     fetch('/competences.json')
       .then(res => res.json())
       .then(data => {
-        this.competences = data.map(c => ({ ...c, expanded: false }));      })
+        this.competences = data.map(c => ({ ...c, expanded: false }));
+      })
       .catch(err => console.error('Erreur de chargement des compétences :', err))
   }
 }
