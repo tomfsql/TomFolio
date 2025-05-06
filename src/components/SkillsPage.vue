@@ -32,12 +32,14 @@
               <p><strong>Catégorie :</strong> {{ tech.categorie }}</p>
               <p><strong>Maîtrise :</strong> {{ tech.maitrise }}</p>
               <transition name="expand">
-                <p v-if="tech.expanded && tech.details">
-                  <strong>Détails :</strong> {{ tech.details }}
-                </p>
-                <p v-else-if="!tech.expanded && tech.details">
-                  Plus d'informations ?
-                </p>
+                <div>
+                  <button class="toggle-btn" @click.stop="toggleExpand(tech)">
+                    {{ tech.expanded ? '-' : '+' }}
+                  </button>
+                  <p v-if="tech.expanded">
+                    <strong>Détails :</strong> {{ tech.details }}
+                  </p>
+                </div>
               </transition>
           </div>
         </div>

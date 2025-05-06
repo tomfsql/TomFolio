@@ -4,21 +4,21 @@
     "usageDepuis": "2021",
     "categorie": "Langage de programmation",
     "maitrise": "Bonne",
-    "details": ""
+    "details": "Langage utilisé régulièrement dans mon cursus, avec les concepts d'héritage, polymorphisme, Swing pour créer des IHM ( en s'appuyant sur les Model )"
   },
   {
     "nom": "C",
     "usageDepuis": "2021",
     "categorie": "Langage de programmation",
     "maitrise": "Moyenne",
-    "details": ""
+    "details": "Langage utilisé en Année Spéciale uniquement"
   },
   {
     "nom": "JavaScript/TypeScript",
     "usageDepuis": "2024",
     "categorie": "Langage de programmation",
     "maitrise": "Bonne",
-    "details": ""
+    "details": "Langage fréquemment utilisé en cours et en entreprise, que ce soit en framework ou non, pour des projets"
   },
   {
     "nom": "Python",
@@ -39,7 +39,7 @@
     "usageDepuis": "2024",
     "categorie": "Langage de programmation",
     "maitrise": "Basique",
-    "details": ""
+    "details": "Langage uniquement utilisé en cours en Année Spéciale"
   },
   {
     "nom": "C#",
@@ -67,7 +67,7 @@
     "usageDepuis": "2024",
     "categorie": "Framework web",
     "maitrise": "Bonne",
-    "details": "Vu en cours au S4 d'Année Spéciale, puis utilisé en entreprise"
+    "details": "Vu en cours au S4 d'Année Spéciale, puis utilisé en entreprise et pour le portfolio"
   },
   {
     "nom": "Flask",
@@ -81,7 +81,7 @@
     "usageDepuis": "2024",
     "categorie": "Langage de manipulation de Base de Données",
     "maitrise": "Moyenne",
-    "details": ""
+    "details": "Langage vu en cours mais aucune occasion de le réutiliser depuis"
   },
   {
     "nom": "MongoDB",
@@ -109,13 +109,13 @@
     "usageDepuis": "2024",
     "categorie": "Outil",
     "maitrise": "Moyenne",
-    "details": ""
+    "details": "Outil vu à de nombreuses reprises en cours"
   },
   {
     "nom": "Bash",
     "usageDepuis": "2024",
     "categorie": "Langage système",
     "maitrise": "Moyenne",
-    "details": ""
+    "details": "Langage vu en cours et utilisé au quotidien sur mon ordinateur personnel"
   }
 ]
