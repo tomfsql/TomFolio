@@ -28,6 +28,7 @@
             @click="toggleExpand(tech)"
             >
               <h3>{{ tech.nom }}</h3>
+              <img v-if="tech.image" :src="tech.image" :alt="tech.nom" width="32" height="32" />
               <p><strong>Depuis :</strong> {{ tech.usageDepuis }}</p>
               <p><strong>Catégorie :</strong> {{ tech.categorie }}</p>
               <p><strong>Maîtrise :</strong> {{ tech.maitrise }}</p>
@@ -78,6 +79,7 @@
 </template>
 
 <script>
+import competences from '@/assets/data/competences.js';
 export default {
   name: 'HomePage',
 data() {
@@ -136,12 +138,7 @@ data() {
     },
   },
   mounted() {
-    fetch('/competences.json')
-      .then(res => res.json())
-      .then(data => {
-        this.competences = data.map(c => ({ ...c, expanded: false }));
-      })
-      .catch(err => console.error('Erreur de chargement des compétences :', err))
+    this.competences = competences.map(c => ({ ...c, expanded: false }));
   }
 }
 </script>

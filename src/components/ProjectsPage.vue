@@ -16,14 +16,11 @@
             <button @click="toggleProject(projet.id)">
               {{ showProjects[projet.id] ? 'Masquer' : 'Afficher' }} le projet
             </button>
-            <div v-if="!showProjects[projet.id]">
-              <p><em>Détails supplémentaires disponibles</em></p>
-            </div>
-            <div v-else>
+            <div v-if="showProjects[projet.id]">
               <p><strong>Période :</strong> {{ projet.date }}</p>
               <p><strong>Langages utilisés :</strong> {{ projet.techno }}</p>
               <p><strong>Informations complémentaires :</strong></p>
-              <p> {{  projet.details }}</p>
+              <p> {{  projet.details }}</p>            
             </div>
           </div>
         </div>
@@ -33,12 +30,15 @@
 </template>
 
 <script>
+import projets from '@/assets/data/projets.json';
+import categories from '@/assets/data/categories.json';
+
 export default {
   name: 'ProjectsPage',
   data() {
     return {
-      groupedProjets: {},
-      categoryNames: {},
+      groupedProjets: projets, 
+      categoryNames: categories,
       showCategories: {},
       showProjects: {}
     };
@@ -63,16 +63,8 @@ export default {
     }
   },
   mounted() {
-    Promise.all([
-      fetch('/projets.json').then(res => res.json()),
-      fetch('/categories.json').then(res => res.json())
-    ])
-    .then(([projetsData, names]) => {
-      this.groupedProjets = projetsData;
-      this.categoryNames = names;
-      this.initializeDisplayStates(projetsData);
-    })
-    .catch(err => console.error("Erreur de chargement :", err));
+    this.initializeDisplayStates(this.groupedProjets);
   }
 };
 </script>
+
