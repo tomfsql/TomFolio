@@ -28,13 +28,6 @@
     "details": "Utilisé en programmation multimédia, avec FastAPI dans le cadre d'un projet, ainsi que pour des tests unitaires"
   },
   {
-    "nom": "HTML/CSS",
-    "usageDepuis": "2023",
-    "categorie": "Langage de programmation",
-    "maitrise": "Bonne",
-    "details": ""
-  },
-  {
     "nom": "PHP",
     "usageDepuis": "2024",
     "categorie": "Langage de programmation",
@@ -77,9 +70,9 @@
     "details": "Usage en entreprise afin de créer une application interne de gestion des données"
   },
   {
-    "nom": "PL/SQL",
+    "nom": "MySQL & PL/SQL",
     "usageDepuis": "2024",
-    "categorie": "Langage de manipulation de Base de Données",
+    "categorie": "Langage de manipulation de Base de Données basé sur SQL",
     "maitrise": "Moyenne",
     "details": "Langage vu en cours mais aucune occasion de le réutiliser depuis"
   },
@@ -109,7 +102,7 @@
     "usageDepuis": "2024",
     "categorie": "Outil",
     "maitrise": "Moyenne",
-    "details": "Outil vu à de nombreuses reprises en cours"
+    "details": "Outil utilisé à de nombreuses reprises en cours"
   },
   {
     "nom": "Bash",
