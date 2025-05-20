@@ -70,11 +70,13 @@
     <p>
       Ces compétences s'inscrivent dans un contexte lié au BUT, qui vise à développer des compétences plus générales :
     </p>
-    <ul>
-      <li>Élaborer et faire évoluer une application informatique</li>
-      <li>Travailler et collaborer au sein d'une équipe informatique</li>
-      <li>Mettre en place des applications informatiques adaptées et efficaces</li>
-    </ul>
+    <ol>
+      <li> Réaliser un développement d'application </li>
+      <li> Optimiser des applications </li>
+      <li> Administrer des systèmes informatiques communicants complexes</li>
+      <li> Conduire un projet </li>
+      <li> Travailler et collaborer au sein d'une équipe informatique</li>
+    </ol>
   </div>
 </template>
 
