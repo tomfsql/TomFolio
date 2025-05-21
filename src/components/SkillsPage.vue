@@ -70,13 +70,15 @@
     <p>
       Ces compétences s'inscrivent dans un contexte lié au BUT, qui vise à développer des compétences plus générales :
     </p>
-    <ol>
-      <li> Réaliser un développement d'application </li>
-      <li> Optimiser des applications </li>
-      <li> Administrer des systèmes informatiques communicants complexes</li>
-      <li> Conduire un projet </li>
-      <li> Travailler et collaborer au sein d'une équipe informatique</li>
-    </ol>
+    <div id="BUTSkills">
+      <ol>
+        <li> Réaliser un développement d'application </li>
+        <li> Optimiser des applications </li>
+        <li> Administrer des systèmes informatiques communicants complexes</li>
+        <li> Conduire un projet </li>
+        <li> Travailler et collaborer au sein d'une équipe informatique</li>
+      </ol>
+    </div>
   </div>
 </template>
 

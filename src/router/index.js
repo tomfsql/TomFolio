@@ -11,7 +11,16 @@ const router = createRouter({
     { path: '/about', name: 'À propos de moi', component: AboutPage },
     { path: '/projects', name: 'Projets', component: ProjectsPage },
     { path: '/skills', name: 'Compétences', component: SkillsPage }
-  ]
+  ],
+  scrollBehavior(to) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth', // ou 'auto'
+      }
+    }
+    return { top: 0 }
+  }
 })
 
 export default router

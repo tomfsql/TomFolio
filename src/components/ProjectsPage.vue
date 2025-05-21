@@ -2,6 +2,8 @@
   <div>
     <h1>Mes Projets</h1>
 
+    <p> Les <RouterLink to="/skills#BUTSkills">compétences</RouterLink> sont présentées ici.</p>
+
     <div v-for="(projets, categorie) in groupedProjets" :key="categorie">
       <h2>{{ categoryNames[categorie] || categorie }}</h2>
 
@@ -21,6 +23,7 @@
               <p><strong>Langages utilisés :</strong> {{ projet.techno }}</p>
               <p><strong>Informations complémentaires :</strong></p>
               <p> {{  projet.details }}</p>            
+              <p><strong>Compétences mobilisées :</strong> {{  projet.competences }} </p>            
             </div>
           </div>
         </div>
