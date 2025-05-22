@@ -2,7 +2,7 @@
   <div>
     <h1>Mes Projets</h1>
 
-    <p> Les <RouterLink to="/skills#BUTSkills">compétences</RouterLink> sont présentées ici.</p>
+    <p> Les <RouterLink to="/skills#BUTSkills">compétences liées au BUT</RouterLink> sont présentées ici.</p>
 
     <div v-for="(projets, categorie) in groupedProjets" :key="categorie">
       <h2>{{ categoryNames[categorie] || categorie }}</h2>

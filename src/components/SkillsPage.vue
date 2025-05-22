@@ -11,8 +11,7 @@
     </button>
 
     <input v-model="search" placeholder="Rechercher une compétence..." />
-
-
+    
     <div>
       <div v-if="sortedCompetences.length">
         <div class="skillgrid">
