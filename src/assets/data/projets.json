@@ -31,6 +31,14 @@
       "details": "Projet de la matière Qualité de Développement, création de tests unitaires avec Pytest pour le pipeline CI.",
       "techno": "Python / Pytest",
       "competences": "1,5"
+    },
+    {
+      "titre": "Site vitrine pour une boutique",
+      "id": "BoutiqueJS",
+      "date": "BUT Informatique Année Spéciale – Semestre 4",
+      "details": "Développement d'un site web en JavaScript",
+      "techno": "HTML / CSS / JS" ,
+      "competences": "1"
     }
   ],
   "Work": [
