@@ -23,7 +23,15 @@
               <p><strong>Langages utilisés :</strong> {{ projet.techno }}</p>
               <p><strong>Informations complémentaires :</strong></p>
               <p> {{  projet.details }}</p>            
-              <p><strong>Compétences mobilisées :</strong> {{  projet.competences }} </p>            
+              <p><strong>Compétences mobilisées :</strong> {{  projet.competences }} </p>
+              <div v-if="projet.url">
+                <p><strong>Lien vers le projet :</strong> 
+                  <a :href="projet.url" target="_blank" rel="noopener">Voir le projet</a>
+                </p>
+              </div>
+              <div v-else>
+                <p><strong>Lien :</strong> Aucune URL disponible pour ce projet.</p>
+              </div>
             </div>
           </div>
         </div>
