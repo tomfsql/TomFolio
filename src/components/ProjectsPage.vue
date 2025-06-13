@@ -25,8 +25,7 @@
               <p> {{  projet.details }}</p>            
               <p><strong>Compétences mobilisées :</strong> {{  projet.competences }} </p>
               <div v-if="projet.url">
-                <p><strong>Lien vers le projet :</strong> 
-                  <a :href="projet.url" target="_blank" rel="noopener">Voir le projet</a>
+                <p><strong> <a :href="projet.url" target="_blank" rel="noopener">Voir le projet</a></strong> 
                 </p>
               </div>
               <div v-else>
