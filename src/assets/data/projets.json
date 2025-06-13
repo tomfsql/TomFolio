@@ -7,7 +7,7 @@
       "details": "Projet réalisé en groupe de 3 personnes.\nConception et développement du solveur back-end avec la librairie SAGE (Python).",
       "techno": "Python / SAGE",
       "competences": "1,2,4,5",
-      "url": ""
+      "url": "https://forge.univ-lyon1.fr/p2310802/sae_chanpiu_costa_dupont_fasquelle"
     },
     {
       "titre": "Application web de gestion d'exercices",
@@ -16,7 +16,7 @@
       "details": "Projet du cours de programmation front-end.\nUtilisation d'Angular pour un rendu dynamique et ergonomique.",
       "techno": "Angular",
       "competences": "1",
-      "url": ""
+      "url": "https://forge.univ-lyon1.fr/p2310802/AngularS5"
     },
     {
       "titre": "Site web statique sur les mobilités douces",
@@ -25,7 +25,7 @@
       "details": "Développement en binôme, prise en charge du responsive design.",
       "techno": "HTML / CSS",
       "competences": "1,2,4,5",
-      "url": ""
+      "url": "https://forge.univ-lyon1.fr/p2310802/sae_web"
     },
     {
       "titre": "Jeu en ligne interactif",
@@ -34,7 +34,7 @@
       "details": "Projet de la matière Qualité de Développement, création de tests unitaires avec Pytest pour le pipeline CI.",
       "techno": "Python / Pytest",
       "competences": "1,5",
-      "url": ""
+      "url": "https://forge.univ-lyon1.fr/p2310802/qdevs5"
     },
     {
       "titre": "Site vitrine pour une boutique",
