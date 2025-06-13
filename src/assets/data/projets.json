@@ -6,7 +6,8 @@
       "date": "BUT Informatique Année Spéciale – Semestre 4",
       "details": "Projet réalisé en groupe de 3 personnes.\nConception et développement du solveur back-end avec la librairie SAGE (Python).",
       "techno": "Python / SAGE",
-      "competences": "1,2,4,5"
+      "competences": "1,2,4,5",
+      "url": ""
     },
     {
       "titre": "Application web de gestion d'exercices",
@@ -14,7 +15,8 @@
       "date": "BUT3 – Semestre 5",
       "details": "Projet du cours de programmation front-end.\nUtilisation d'Angular pour un rendu dynamique et ergonomique.",
       "techno": "Angular",
-      "competences": "1"
+      "competences": "1",
+      "url": ""
     },
     {
       "titre": "Site web statique sur les mobilités douces",
@@ -22,7 +24,8 @@
       "date": "BUT Année Spéciale – Semestre 3",
       "details": "Développement en binôme, prise en charge du responsive design.",
       "techno": "HTML / CSS",
-      "competences": "1,2,4,5"
+      "competences": "1,2,4,5",
+      "url": ""
     },
     {
       "titre": "Jeu en ligne interactif",
@@ -30,15 +33,17 @@
       "date": "BUT3 – Semestre 5",
       "details": "Projet de la matière Qualité de Développement, création de tests unitaires avec Pytest pour le pipeline CI.",
       "techno": "Python / Pytest",
-      "competences": "1,5"
+      "competences": "1,5",
+      "url": ""
     },
     {
       "titre": "Site vitrine pour une boutique",
       "id": "BoutiqueJS",
       "date": "BUT Informatique Année Spéciale – Semestre 4",
       "details": "Développement d'un site web en JavaScript",
-      "techno": "HTML / CSS / JS" ,
-      "competences": "1"
+      "techno": "HTML / CSS / JS",
+      "competences": "1",
+      "url": "https://github.com/fasquelt/BoutiqueJS"
     }
   ],
   "Work": [
@@ -48,7 +53,8 @@
       "date": "Alternance – 2024",
       "details": "Application interne avec accès via LDAP.\nDéveloppement complet : authentification, CRUD, affichage.",
       "techno": "Flask / HTML",
-      "competences": "1,2,3"
+      "competences": "1,2,3",
+      "url": "https://gitlab.viewpoint.fr/viewpoint/ldap-manager"
     },
     {
       "titre": "Remplacement d'interface logicielle",
@@ -56,7 +62,8 @@
       "date": "Alternance – 2025",
       "details": "Affichage dynamique des données via une application Vue.js.\nCommunication entre WebView (VueJS) et une application C#.",
       "techno": "Vue.js / C#",
-      "competences": "1,2,3"
+      "competences": "1,2,3",
+      "url": "https://github.com/fasquelt/PropertyGridWithCore2"
     }
   ]
 }
