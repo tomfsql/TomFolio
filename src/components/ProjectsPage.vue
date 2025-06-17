@@ -46,7 +46,6 @@ export default {
   data() {
     return {
       groupedProjets: projets, 
-      categoryNames: categories,
       showCategories: {},
       showProjects: {}
     };
