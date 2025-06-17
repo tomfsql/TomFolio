@@ -4,8 +4,8 @@
 
     <p> Les <RouterLink to="/skills#BUTSkills">compétences liées au BUT</RouterLink> sont présentées ici.</p>
 
-    <div v-for="(projets, categorie) in groupedProjets" :key="categorie">
-      <h2>{{ categoryNames[categorie] || categorie }}</h2>
+    <div v-for="(categorieData, categorieKey) in groupedProjets" :key="categorie">
+      <h2>{{ categorieData.label || categorie }}</h2>
 
       <button @click="toggleCategory(categorie)">
         {{ showCategories[categorie] ? 'Masquer' : 'Afficher' }}
@@ -41,8 +41,6 @@
 
 <script>
 import projets from '@/assets/data/projets.json';
-import categories from '@/assets/data/categories.json';
-
 export default {
   name: 'ProjectsPage',
   data() {
