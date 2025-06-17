@@ -1,71 +1,75 @@
 {
-  "IUT": [
-    "label": "Projets scolaires réalisés lors de mon BUT",
-    {
-      "titre": "Application web de planification des stages",
-      "id": "Solveur",
-      "date": "BUT Informatique Année Spéciale – Semestre 4",
-      "details": "Projet réalisé en groupe de 3 personnes.\nConception et développement du solveur back-end avec la librairie SAGE (Python).",
-      "techno": "Python / SAGE",
-      "competences": "1,2,3,4,5",
-      "url": "https://forge.univ-lyon1.fr/p2310802/sae_chanpiu_costa_dupont_fasquelle"
-    },
-    {
-      "titre": "Application web de gestion d'exercices",
-      "id": "Exercices",
-      "date": "BUT3 – Semestre 5",
-      "details": "Projet du cours de programmation front-end.\nUtilisation d'Angular pour un rendu dynamique et ergonomique.",
-      "techno": "Angular",
-      "competences": "1,3",
-      "url": "https://forge.univ-lyon1.fr/p2310802/AngularS5"
-    },
-    {
-      "titre": "Site web statique sur les mobilités douces",
-      "id": "SiteWeb",
-      "date": "BUT Année Spéciale – Semestre 3",
-      "details": "Développement en binôme, prise en charge du responsive design.",
-      "techno": "HTML / CSS",
-      "competences": "1,4,5",
-      "url": "https://forge.univ-lyon1.fr/p2310802/sae_web"
-    },
-    {
-      "titre": "Jeu en ligne interactif",
-      "id": "QDev",
-      "date": "BUT3 – Semestre 5",
-      "details": "Projet de la matière Qualité de Développement, création de tests unitaires avec Pytest pour le pipeline CI.",
-      "techno": "Python / Pytest",
-      "competences": "1,3,4,5",
-      "url": "https://forge.univ-lyon1.fr/p2310802/qdevs5"
-    },
-    {
-      "titre": "Site vitrine pour une boutique",
-      "id": "BoutiqueJS",
-      "date": "BUT Informatique Année Spéciale – Semestre 4",
-      "details": "Développement d'un site web en JavaScript",
-      "techno": "HTML / CSS / JS",
-      "competences": "1,2",
-      "url": "https://github.com/fasquelt/BoutiqueJS"
-    }
-  ],
-  "VP": [
-    "label": "Projets réalisés lors de mon alternance à ViewPoint",
-    {
-      "titre": "Application web de gestion d'annuaire",
-      "id": "Annuaire",
-      "date": "Alternance – 2024",
-      "details": "Application interne avec accès via LDAP.\nDéveloppement complet : authentification, CRUD, affichage.",
-      "techno": "Flask / HTML",
-      "competences": "1,2,3",
-      "url": "https://gitlab.viewpoint.fr/viewpoint/ldap-manager"
-    },
-    {
-      "titre": "Remplacement d'interface logicielle",
-      "id": "PropertyGrid",
-      "date": "Alternance – 2025",
-      "details": "Affichage dynamique des données via une application Vue.js.\nCommunication entre WebView (VueJS) et une application C#.",
-      "techno": "Vue.js / C#",
-      "competences": "1,2,3",
-      "url": "https://github.com/fasquelt/PropertyGridWithCore2"
-    }
-  ]
+  "School": {
+    "label": "Projets scolaires",
+    "projets": [
+      {
+        "titre": "Application web de planification des stages",
+        "id": "Solveur",
+        "date": "BUT Informatique Année Spéciale – Semestre 4",
+        "details": "Projet réalisé en groupe de 3 personnes.\nConception et développement du solveur back-end avec la librairie SAGE (Python).",
+        "techno": "Python / SAGE",
+        "competences": "1,2,3,4,5",
+        "url": "https://forge.univ-lyon1.fr/p2310802/sae_chanpiu_costa_dupont_fasquelle"
+      },
+      {
+        "titre": "Application web de gestion d'exercices",
+        "id": "Exercices",
+        "date": "BUT3 – Semestre 5",
+        "details": "Projet du cours de programmation front-end.\nUtilisation d'Angular pour un rendu dynamique et ergonomique.",
+        "techno": "Angular",
+        "competences": "1,3",
+        "url": "https://forge.univ-lyon1.fr/p2310802/AngularS5"
+      },
+      {
+        "titre": "Site web statique sur les mobilités douces",
+        "id": "SiteWeb",
+        "date": "BUT Année Spéciale – Semestre 3",
+        "details": "Développement en binôme, prise en charge du responsive design.",
+        "techno": "HTML / CSS",
+        "competences": "1,4,5",
+        "url": "https://forge.univ-lyon1.fr/p2310802/sae_web"
+      },
+      {
+        "titre": "Jeu en ligne interactif",
+        "id": "QDev",
+        "date": "BUT3 – Semestre 5",
+        "details": "Projet de la matière Qualité de Développement, création de tests unitaires avec Pytest pour le pipeline CI.",
+        "techno": "Python / Pytest",
+        "competences": "1,3,4,5",
+        "url": "https://forge.univ-lyon1.fr/p2310802/qdevs5"
+      },
+      {
+        "titre": "Site vitrine pour une boutique",
+        "id": "BoutiqueJS",
+        "date": "BUT Informatique Année Spéciale – Semestre 4",
+        "details": "Développement d'un site web en JavaScript",
+        "techno": "HTML / CSS / JS",
+        "competences": "1,2",
+        "url": "https://github.com/fasquelt/BoutiqueJS"
+      }
+    ],
+  },
+ "Work": {
+    "label": "Projets professionnels",
+    "projets": [
+      {
+        "titre": "Application web de gestion d'annuaire",
+        "id": "Annuaire",
+        "date": "Alternance – 2024",
+        "details": "Application interne avec accès via LDAP.\nDéveloppement complet : authentification, CRUD, affichage.",
+        "techno": "Flask / HTML",
+        "competences": "1,2,3",
+        "url": "https://gitlab.viewpoint.fr/viewpoint/ldap-manager"
+      },
+      {
+        "titre": "Remplacement d'interface logicielle",
+        "id": "PropertyGrid",
+        "date": "Alternance – 2025",
+        "details": "Affichage dynamique des données via une application Vue.js.\nCommunication entre WebView (VueJS) et une application C#.",
+        "techno": "Vue.js / C#",
+        "competences": "1,2,3",
+        "url": "https://github.com/fasquelt/PropertyGridWithCore2"
+      }
+    ]
+ }
 }
