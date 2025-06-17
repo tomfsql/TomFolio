@@ -1,6 +1,6 @@
 {
-  "School": {
-    "label": "Projets scolaires",
+  "IUT": {
+    "label": "Projets réalisés lors de mon BUT",
     "projets": [
       {
         "titre": "Application web de planification des stages",
@@ -47,10 +47,10 @@
         "competences": "1,2",
         "url": "https://github.com/fasquelt/BoutiqueJS"
       }
-    ],
+    ]
   },
- "Work": {
-    "label": "Projets professionnels",
+ "VP": {
+    "label": "Projets réalisés au cours de mon stage et alternance à ViewPoint",
     "projets": [
       {
         "titre": "Application web de gestion d'annuaire",

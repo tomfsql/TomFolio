@@ -2,9 +2,7 @@
   <div>
     <h1>Mes Projets</h1>
 
-    <p> Les <RouterLink to="/skills#BUTSkills">compétences liées au BUT</RouterLink> sont présentées ici.</p>
-
-    <div v-for="categorieData in groupedProjets" :key="categorie">
+    <div v-for="(categorieData, categorie) in groupedProjets" :key="categorie">
       <h2>{{ categorieData.label || categorie }}</h2>
 
       <button @click="toggleCategory(categorie)">
@@ -12,7 +10,7 @@
       </button>
 
       <div v-if="showCategories[categorie]">
-        <div v-for="projet in projets" :key="projet.id">
+        <div v-for="projet in categorieData.projets" :key="projet.id">
           <div class="card">
             <h3>{{ projet.titre }}</h3>
             <button @click="toggleProject(projet.id)">
@@ -37,6 +35,9 @@
       </div>
     </div>
   </div>
+
+  <p> Les <RouterLink to="/skills#BUTSkills">compétences liées au BUT</RouterLink> sont présentées ici.</p>
+
 </template>
 
 <script>
