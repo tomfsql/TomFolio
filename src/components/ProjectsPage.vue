@@ -4,7 +4,7 @@
 
     <p> Les <RouterLink to="/skills#BUTSkills">compétences liées au BUT</RouterLink> sont présentées ici.</p>
 
-    <div v-for="(categorieData, categorieKey) in groupedProjets" :key="categorie">
+    <div v-for="categorieData in groupedProjets" :key="categorie">
       <h2>{{ categorieData.label || categorie }}</h2>
 
       <button @click="toggleCategory(categorie)">
@@ -58,7 +58,9 @@ export default {
       this.showProjects[id] = !this.showProjects[id];
     },
     initializeDisplayStates(projetsData) {
-      const allProjects = Object.values(projetsData).flat();
+      const allProjects = Object.values(projetsData)
+        .map(group => group.projets)
+        .flat();
       this.showProjects = allProjects.reduce((acc, p) => {
         acc[p.id] = true;
         return acc;
