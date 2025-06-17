@@ -1,5 +1,6 @@
 {
-  "School": [
+  "IUT": [
+    "label": "Projets scolaires réalisés lors de mon BUT",
     {
       "titre": "Application web de planification des stages",
       "id": "Solveur",
@@ -46,7 +47,8 @@
       "url": "https://github.com/fasquelt/BoutiqueJS"
     }
   ],
-  "Work": [
+  "VP": [
+    "label": "Projets réalisés lors de mon alternance à ViewPoint",
     {
       "titre": "Application web de gestion d'annuaire",
       "id": "Annuaire",
