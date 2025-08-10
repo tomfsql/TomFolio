@@ -84,7 +84,7 @@ export default [
     usageDepuis: "2024",
     categorie: "Langage de manipulation de Base de Données basé sur SQL",
     maitrise: "Moyenne",
-    details: "Langage vu en cours mais aucune occasion de le réutiliser depuis",
+    details: "Langage vu en cours mais non-utilisé depuis",
     image: new URL('@/assets/img/mysql.svg', import.meta.url).href
   },
   {
@@ -106,15 +106,29 @@ export default [
   {
     nom: "Git",
     usageDepuis: "2024",
-    categorie: "Outil",
+    categorie: "Outil système de versioning",
     maitrise: "Bonne",
-    details: "Usage depuis 2021, utilisé dans de nombreux cours et projets, familier avec la CLI",
+    details: "Usage depuis 2021, utilisé dans de nombreux cours et projets, familier avec la CLI. Usage de GitHub et GitLab",
     image: new URL('@/assets/img/git.svg', import.meta.url).href
+  },
+  {
+    nom: "Windows",
+    usageDepuis: "2021",
+    categorie: "Système d'exploitation",
+    maitrise: "Bonne",
+    image: new URL('@/assets/img/windows.svg', import.meta.url).href
+  },
+  {
+    nom: "GNU/Linux",
+    usageDepuis: "2021",
+    categorie: "Système d'exploitation",
+    maitrise: "Bonne",
+    image: new URL('@/assets/img/linux.svg', import.meta.url).href
   },
   {
     nom: "Docker",
     usageDepuis: "2024",
-    categorie: "Outil",
+    categorie: "Outil système de conteneurisation",
     maitrise: "Moyenne",
     details: "Outil utilisé à de nombreuses reprises en cours",
     image: new URL('@/assets/img/docker.svg', import.meta.url).href
@@ -126,5 +140,37 @@ export default [
     maitrise: "Moyenne",
     details: "Langage vu en cours et utilisé au quotidien sur mon ordinateur personnel",
     image: new URL('@/assets/img/bash.svg', import.meta.url).href
-  }
+  },
+  {
+    nom: "UML",
+    usageDepuis: "2024",
+    categorie: "Outil de modélisation",
+    details: "Langage de modélisation de Base de Données",
+    maitrise : "Moyenne",
+    image: new URL('@/assets/img/uml.svg', import.meta.url).href
+  },
+  {
+    nom: "Trello",
+    usageDepuis: "2024",
+    categorie: "Outil de gestion de projet",
+    details: "Application et site web destinée à la gestion de projets",
+    maitrise : "Moyenne",
+    image: new URL('@/assets/img/trello.svg', import.meta.url).href
+  },
+  {
+    nom: "Agile / Scrum ",
+    usageDepuis: "2024",
+    categorie: "Méthode de gestion de projet",
+    details: "Connaissance et utilisation des principes Agile, Scrum",
+    maitrise : "Moyenne",
+    image: new URL('@/assets/img/agile.svg', import.meta.url).href
+  },
+  {
+    nom: "Kanban ",
+    usageDepuis: "2024",
+    categorie: "Méthode de gestion de projet",
+    details: "Connaissance et utilisation de la méthode Kanban",
+    maitrise : "Moyenne",
+    image: new URL('@/assets/img/kanban.svg', import.meta.url).href
+  },
 ];

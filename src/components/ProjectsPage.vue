@@ -2,6 +2,9 @@
   <div>
     <h1>Mes Projets</h1>
 
+      <p> Les compétences liées au BUT et mobilisées lors de ces projets sont présentées <RouterLink to="/skills#BUTSkills"> ici </RouterLink>.</p>
+
+
     <div v-for="(categorieData, categorie) in groupedProjets" :key="categorie">
       <h2>{{ categorieData.label || categorie }}</h2>
 
@@ -35,8 +38,33 @@
       </div>
     </div>
   </div>
+  <footer> 
+    
+    <div class="footer-content">
+      <div class="footer-info">
+        <h3> Tom Fasquelle </h3>
+        <p>Étudiant en BUT Informatique | Développeur web & logiciel junior</p>
+      </div>
+    </div>
 
-  <p> Les <RouterLink to="/skills#BUTSkills">compétences liées au BUT</RouterLink> sont présentées ici.</p>
+    <div class="footer-contact">
+      Me contacter :
+          <a href="mailto:tom.fasquelle@laposte.net">
+            <i class="fas fa-envelope"></i></a>
+    </div>
+
+    <div class="footer-social">
+        <a href="https://www.linkedin.com/in/tom-fasquelle/" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/fasquelt" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>
+        </a>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; Tom Fasquelle 2025 - Tous droits réservés</p>
+    </div>
+  </footer>
 
 </template>
 
