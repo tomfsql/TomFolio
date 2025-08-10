@@ -6,14 +6,10 @@
       Tout au long de mon cursus scolaire, j'ai pu développer diverses compétences techniques dans des langages et outils, présentés ci-dessous :
     </p>
 
+        <input v-model="search" placeholder="Rechercher une compétence..." />
+
+
         <h2>Langages de programmation</h2>
-
-
-    <button @click="toggleSortOrder">
-      Trier par {{ sortBy === 'catégorie' ? 'maîtrise' : 'catégorie' }}
-    </button>
-
-    <input v-model="search" placeholder="Rechercher une compétence..." />
     
     <div>
       <div v-if="sortedCompetencesDev.length">
@@ -51,6 +47,7 @@
       <div v-else>Chargement ou aucune compétence trouvée.</div>
     </div>
 
+    <h2>Langages de Bases de Données </h2>
     <div v-if="sortedCompetencesDB.length">
         <div class="skillgrid">
           <div
@@ -107,7 +104,7 @@
       </div>
     </div>
 
-        <h2>Gestion de projet</h2>
+    <h2>Gestion de projet</h2>
     <div class="toolgrid">
       <div
         class="card"
@@ -188,29 +185,26 @@ data() {
     };
   },
   computed: {
+    sortedCompetences() {
+      const term = this.search.trim().toLowerCase();
+      return this.competences
+        .filter(tech => {
+          return [tech.nom, tech.categorie]
+            .some(field => field.toLowerCase().includes(term));
+        });
+    },
     sortedCompetencesDev() {
-      const term = this.search.toLowerCase();
-      const competencesFiltered = this.competences
-        .filter(tech => tech.categorie.toLowerCase().includes('langage') || 
-          tech.categorie.toLowerCase().includes('framework'))
-        .filter(tech =>
-          tech.nom.toLowerCase().includes(term) ||
-          tech.categorie.toLowerCase().includes(term) ||
-          tech.maitrise.toLowerCase().includes(term)
-        );
-
-      return competencesFiltered.sort((a, b) => {
-        if (this.sortBy === 'catégorie') {
-          return a.categorie.localeCompare(b.categorie);
-        } else if (this.sortBy === 'maîtrise') {
-          const scoreA = this.niveaux[a.maitrise] || 0;
-          const scoreB = this.niveaux[b.maitrise] || 0;
-          if (scoreA !== scoreB) {
-            return scoreB - scoreA;
+      return this.competences
+        .filter(
+          tech => tech.categorie.toLowerCase().includes('programmation') ||
+          tech.categorie.toLowerCase().includes('framework')
+        )
+        .sort((a, b) => {
+          if (a.maitrise !== b.maitrise) {
+            return a.maitrise === 'Bonne' ? -1 : 1
           }
-          return a.nom.localeCompare(b.nom);
-  }
-      });
+          return a.nom.localeCompare(b.nom)
+        })
     },
     sortedCompetencesOutils() {
       return this.competences
@@ -225,7 +219,7 @@ data() {
     },
     sortedCompetencesDB() {
       return this.competences
-        .filter(tech => tech.categorie.toLowerCase().includes('bases de données'))
+        .filter(tech => tech.categorie.toLowerCase().includes('base de données'))
         .sort((a, b) => {
           if (a.maitrise !== b.maitrise) {
             return a.maitrise === 'Bonne' ? -1 : 1
@@ -233,7 +227,6 @@ data() {
           return a.nom.localeCompare(b.nom)
         })
     },
-
     sortedCompetencesGPI() {
       return this.competences
         .filter(tech => tech.categorie.toLowerCase().includes('modélisation') || 

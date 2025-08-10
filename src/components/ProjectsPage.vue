@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Mes Projets</h1>
+    <h1>Mes projets</h1>
 
       <p> Les compétences liées au BUT et mobilisées lors de ces projets sont présentées <RouterLink to="/skills#BUTSkills"> ici </RouterLink>.</p>
 
