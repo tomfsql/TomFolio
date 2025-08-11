@@ -2,7 +2,7 @@ export default [
   {
     nom: "Java",
     usageDepuis: "2021",
-    categorie: "Langage de programmation",
+    categorie: "Langage orienté-objet de programmation logicielle",
     maitrise: "Bonne",
     details: "Langage utilisé régulièrement dans mon cursus, avec les concepts d'héritage, polymorphisme, Swing pour créer des IHM ( en s'appuyant sur les Model )",
     image: new URL('@/assets/img/java.svg', import.meta.url).href
@@ -10,7 +10,7 @@ export default [
   {
     nom: "C",
     usageDepuis: "2021",
-    categorie: "Langage de programmation",
+    categorie: "Langage impératif de programmation logicielle",
     maitrise: "Moyenne",
     details: "Langage utilisé en Année Spéciale uniquement",
     image: new URL('@/assets/img/c.svg', import.meta.url).href
@@ -18,7 +18,7 @@ export default [
   {
     nom: "JavaScript/TypeScript",
     usageDepuis: "2024",
-    categorie: "Langage de programmation",
+    categorie: "Langage de programmation web",
     maitrise: "Bonne",
     details: "Langage fréquemment utilisé en cours et en entreprise, que ce soit en framework ou non, pour des projets",
     image: new URL('@/assets/img/typescript.svg', import.meta.url).href
@@ -26,7 +26,7 @@ export default [
   {
     nom: "Python",
     usageDepuis: "2023",
-    categorie: "Langage de programmation",
+    categorie: "Langage de programmation web et logicielle",
     maitrise: "Bonne",
     details: "Utilisé en programmation multimédia, avec FastAPI dans le cadre d'un projet, ainsi que pour des tests unitaires",
     image: new URL('@/assets/img/python.svg', import.meta.url).href
@@ -34,7 +34,7 @@ export default [
   {
     nom: "PHP",
     usageDepuis: "2024",
-    categorie: "Langage de programmation",
+    categorie: "Langage de programmation web",
     maitrise: "Basique",
     details: "Langage uniquement utilisé en cours en Année Spéciale",
     image: new URL('@/assets/img/php.svg', import.meta.url).href
@@ -42,15 +42,23 @@ export default [
   {
     nom: "C#",
     usageDepuis: "2024",
-    categorie: "Langage de programmation",
-    maitrise: "Basique",
-    details: "Utilisé en entreprise pour le lien avec un navigateur web contenant une application",
+    categorie: "Langage de programmation logicielle",
+    maitrise: "Moyenne",
+    details: "Utilisé en entreprise pour le lien avec un navigateur web contenant une application, et dans d'autres missions",
     image: new URL('@/assets/img/csharp.svg', import.meta.url).href
+  },
+  {
+    nom: "Arduino",
+    usageDepuis: "2024",
+    categorie: "Langage de programmation embarquée",
+    maitrise: "Moyenne",
+    details: "Utilisé en entreprise pour la programmation sur des cartes STM32",
+    image: new URL('@/assets/img/arduino.svg', import.meta.url).href
   },
   {
     nom: "C++",
     usageDepuis: "2024",
-    categorie: "Langage de programmation",
+    categorie: "Langage de programmation logicielle",
     maitrise: "Basique",
     details: "Introduit brièvement en entreprise pour des petits correctifs",
     image: new URL('@/assets/img/c++.svg', import.meta.url).href

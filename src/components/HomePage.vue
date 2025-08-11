@@ -5,7 +5,7 @@
     et aussi d'en savoir un peu plus sur moi. </p>
 
   <div class="brief"> 
-    <p>Au cours de ma scolarité, j'ai eu l'occasion de manier différents languages
+    <p>Au cours de ma scolarité, j'ai eu l'occasion de manier différents langages de programmation
     et paradigmes : </p>
     <ul>
       <li>- impératif </li>
@@ -13,11 +13,11 @@
       <li>- fonctionnel </li>
     </ul>
 
-    <p> J'ai également eu l'occasion de découvrir la programmation :   </p>
+    <p> J'ai également eu l'occasion d'acquérir des connaissances et compétences en développement :   </p>
       <ul>
-        <li>- logicielle</li>
+        <li>- logiciel</li>
         <li>- web</li>
-        <li>- embarquée</li>
+        <li>- embarqué</li>
       </ul>
 
     <p> Ajoutons à cela une connaissance des scripts, une passion pour
