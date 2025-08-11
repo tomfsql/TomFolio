@@ -121,33 +121,36 @@
     </div>
 
     <div v-else class="skillgrid">
-      <div v-for="tech in sortedCompetences" :key="tech.nom">
-        <div
-            class="card"
-            :key="'main-' + index"
-            :class="{
-              good: tech.maitrise === 'Bonne',
-              mid: tech.maitrise === 'Moyenne',
-              begin: tech.maitrise === 'Basique'
-            }"
-            @click="toggleExpand(tech)"
-            >
-              <h3>{{ tech.nom }}</h3>
-              <img v-if="tech.image" :src="tech.image" :alt="tech.nom" 
-                width="32" height="32" />
-              <p><strong>Depuis :</strong> {{ tech.usageDepuis }}</p>
-              <p><strong>Catégorie :</strong> {{ tech.categorie }}</p>
-              <p><strong>Maîtrise :</strong> {{ tech.maitrise }}</p>
-              <transition name="expand">
-                <div>
-                  <p v-if="tech.expanded">
-                    <strong>Détails :</strong> {{ tech.details }}
-                  </p>
-                </div>
-              </transition>
+        <div v-if="sortedCompetences == null"> Chargement ou aucune compétence trouvée. </div>
+        <div v-else>
+          <div v-for="tech in sortedCompetences" :key="tech.nom">
+            <div
+                class="card"
+                :key="'main-' + index"
+                :class="{
+                  good: tech.maitrise === 'Bonne',
+                  mid: tech.maitrise === 'Moyenne',
+                  begin: tech.maitrise === 'Basique'
+                }"
+                @click="toggleExpand(tech)"
+                >
+                  <h3>{{ tech.nom }}</h3>
+                  <img v-if="tech.image" :src="tech.image" :alt="tech.nom" 
+                    width="32" height="32" />
+                  <p><strong>Depuis :</strong> {{ tech.usageDepuis }}</p>
+                  <p><strong>Catégorie :</strong> {{ tech.categorie }}</p>
+                  <p><strong>Maîtrise :</strong> {{ tech.maitrise }}</p>
+                  <transition name="expand">
+                    <div>
+                      <p v-if="tech.expanded">
+                        <strong>Détails :</strong> {{ tech.details }}
+                      </p>
+                    </div>
+                  </transition>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
     <p>
       Ces compétences s'inscrivent dans un contexte lié au BUT, qui vise à développer des compétences plus générales :
