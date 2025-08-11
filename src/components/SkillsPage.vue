@@ -121,7 +121,7 @@
     </div>
 
     <div v-else class="skillgrid">
-        <div v-if="sortedCompetences == null"> Chargement ou aucune compétence trouvée. </div>
+        <div v-if="sortedCompetences.length === 0">Aucune compétence trouvée. </div>
         <div v-else>
           <div v-for="tech in sortedCompetences" :key="tech.nom">
             <div

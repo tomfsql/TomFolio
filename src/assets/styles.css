@@ -16,7 +16,8 @@ input {
 }
 
 button {
-  padding: 6px;
+  padding: 3px;
+  margin : 1rem;
   width: fit-content;
   max-width: 100%; 
 }
