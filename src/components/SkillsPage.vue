@@ -155,15 +155,33 @@
     <p>
       Ces compétences s'inscrivent dans un contexte lié au BUT, qui vise à développer des compétences plus générales :
     </p>
-    <div id="BUTSkills">
-      <ol>
-        <li> Réaliser un développement d'application </li>
-        <li> Optimiser des applications </li>
-        <li> Administrer des systèmes informatiques communicants complexes</li>
-        <li> Conduire un projet </li>
-        <li> Travailler et collaborer au sein d'une équipe informatique</li>
-      </ol>
-    </div>
+    <div v-if="sortedCompetencesBUT.length">
+      <div class="skillgrid">
+        <div
+          class="card"
+          v-for="(tech, index) in sortedCompetencesBUT"
+          :key="'but-' + index"
+          :class="{
+            good: tech.maitrise === 'Bonne',
+            mid: tech.maitrise === 'Moyenne',
+            begin: tech.maitrise === 'Basique'
+          }"
+          @click="toggleExpand(tech)"
+        >
+          <h3>{{ tech.nom }}</h3>
+          <img v-if="tech.image" :src="tech.image" :alt="tech.nom" width="32" height="32" />
+            <p><strong>Maîtrise :</strong> {{ tech.maitrise }}</p>
+            <transition name="expand">
+              <div>
+                <p v-if="tech.expanded">
+                  <strong>Détails :</strong> {{ tech.details }}
+                </p>
+              </div>
+            </transition>
+        </div>
+        </div>
+      </div>
+    <div v-else>Chargement ou aucune compétence BUT trouvée.</div>
 
 
     <footer> 
@@ -203,6 +221,7 @@ data() {
     return {
       search: "",
       competences: [],
+      showCompetencesBUT : {},
       searchEmpty: true,
       sortBy: 'catégorie',
       niveaux : {
@@ -243,7 +262,11 @@ data() {
         .filter(tech => tech.categorie.toLowerCase().includes('modélisation') || 
           tech.categorie.toLowerCase().includes('gestion'))
         .sort((a, b) => a.nom.localeCompare(b.nom));
-    }
+    },
+    sortedCompetencesBUT() {
+    return this.competences
+      .filter(tech => tech.categorie.toLowerCase().includes('but'))
+  }
   },
   methods: {
     toggleExpand(competence) {
@@ -251,10 +274,18 @@ data() {
     },
     checkSearch() {
       this.searchEmpty = this.search.trim() === "";
+    },
+    initializeDisplayStates(competencesData) {
+      this.showCompetencesBUT = Object.keys(competencesData).reduce((acc, key) => {
+        acc[key] = true;
+        return acc;
+      }, {});
     }
   },
   mounted() {
     this.competences = competences.map(c => ({ ...c, expanded: false }));
+    this.initializeDisplayStates(this.showCompetencesBUT);
+
   }
 }
 </script>

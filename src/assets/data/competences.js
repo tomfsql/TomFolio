@@ -181,4 +181,52 @@ export default [
     maitrise : "Moyenne",
     image: new URL('@/assets/img/kanban.svg', import.meta.url).href
   },
+    {
+    nom: "Réaliser un développement d'application",
+    usageDepuis: "2023",
+    categorie: "Compétence BUT",
+    maitrise: "Bonne",
+    details: "Choisir les bonnes technologies, intégrer des applications dans des environnements de production et savoir les maintenir en état",
+    image: new URL('@/assets/img/dev.png', import.meta.url).href
+  },
+  {
+    nom: "Optimiser des applications",
+    usageDepuis: "2023",
+    categorie: "Compétence BUT",
+    maitrise: "Bonne",
+    details: "Améliorer un code existant après analyse de son comportement, remplacer des technologies si nécessaire pour améliorer son fonctionnement",
+    image: new URL('@/assets/img/optimize.png', import.meta.url).href
+  },
+  {
+    nom: "Administrer des systèmes informatiques communicants complexes",
+    usageDepuis: "2023",
+    categorie: "Compétence BUT",
+    maitrise: "Bonne",
+    details: "Savoir utiliser des serveurs, relier des applications par ces services et les sécuriser",
+    image: new URL('@/assets/img/admin.png', import.meta.url).href
+  },
+  {
+    nom: "Gérer des données de l’information",
+    usageDepuis: "2023",
+    categorie: "Compétence BUT",
+    maitrise: "Bonne",
+    details: "Optimiser une base de données, interagir avec une application et mettre en œuvre la sécurité",
+    image: new URL('@/assets/img/data.png', import.meta.url).href
+  },
+  {
+    nom: "Conduire un projet",
+    usageDepuis: "2023",
+    categorie: "Compétence BUT",
+    maitrise: "Bonne",
+    details: "Analyser les processus d'une organisation pour améliorer son système d'information, et être capable de suivre des projets",
+    image: new URL('@/assets/img/manage.png', import.meta.url).href
+  },
+  {
+    nom: "Travailler et collaborer au sein d'une équipe informatique",
+    usageDepuis: "2023",
+    categorie: "Compétence BUT",
+    maitrise: "Moyenne",
+    details: "Situer son rôle et ses missions au sein d'une équipe informatique",
+    image: new URL('@/assets/img/collaborate.png', import.meta.url).href
+  }
 ];
