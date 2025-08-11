@@ -6,7 +6,7 @@
 
 
     <div v-for="(categorieData, categorie) in groupedProjets" :key="categorie">
-      <h2>{{ categorieData.label || categorie }}</h2>
+      <h2 @click="toggleCategory(categorie)">{{ categorieData.label || categorie }}</h2>
 
       <button @click="toggleCategory(categorie)">
         {{ showCategories[categorie] ? 'Masquer' : 'Afficher' }}
@@ -15,10 +15,7 @@
       <div v-if="showCategories[categorie]">
         <div v-for="projet in categorieData.projets" :key="projet.id">
           <div class="card">
-            <h3>{{ projet.titre }}</h3>
-            <button @click="toggleProject(projet.id)">
-              {{ showProjects[projet.id] ? 'Masquer' : 'Afficher' }} le projet
-            </button>
+            <h3 @click="toggleProject(projet.id)">{{ projet.titre }} {{ !showProjects[projet.id] ? ' - ' + projet.techno : '' }}</h3>
             <div v-if="showProjects[projet.id]">
               <p><strong>Période :</strong> {{ projet.date }}</p>
               <p><strong>Langages utilisés :</strong> {{ projet.techno }}</p>
