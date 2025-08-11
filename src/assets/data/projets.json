@@ -39,6 +39,15 @@
         "url": "https://forge.univ-lyon1.fr/p2310802/qdevs5"
       },
       {
+        "titre": "ERP du Département Informatique de l'IUT Lyon 1",
+        "id": "SAE",
+        "date": "BUT3 – Semestre 5 et 6",
+        "details": "Projet de classe du semestre 5, j'ai notamment développé un générateur de lien",
+        "techno": "Angular, puis Next & Express.js",
+        "competences": "1,3,4,5",
+        "url": "https://forge.univ-lyon1.fr/sae-ra3-2024-2025"
+      },
+      {
         "titre": "Site vitrine pour une boutique",
         "id": "BoutiqueJS",
         "date": "BUT Informatique Année Spéciale – Semestre 4",

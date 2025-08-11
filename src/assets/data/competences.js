@@ -68,7 +68,7 @@ export default [
     usageDepuis: "2024",
     categorie: "Framework web",
     maitrise: "Bonne",
-    details: "Utilisé en cours au S5",
+    details: "Utilisé en cours au S5, ainsi que pour un projet en BUT3",
     image: new URL('@/assets/img/angular.svg', import.meta.url).href
   },
   {
@@ -78,6 +78,22 @@ export default [
     maitrise: "Bonne",
     details: "Vu en cours au S4 d'Année Spéciale, puis utilisé en entreprise et pour le portfolio",
     image: new URL('@/assets/img/vue.svg', import.meta.url).href
+  },
+  {
+    nom: "Next.js",
+    usageDepuis: "2025",
+    categorie: "Framework web",
+    maitrise: "Moyenne",
+    details: "Utilisé en BUT3 pour le front-end d'un projet",
+    image: new URL('@/assets/img/next.svg', import.meta.url).href
+  },
+  {
+    nom: "Express.js",
+    usageDepuis: "2025",
+    categorie: "Framework web",
+    maitrise: "Moyenne",
+    details: "Utilisé en BUT3 pour le back-end d'un projet",
+    image: new URL('@/assets/img/express.svg', import.meta.url).href
   },
   {
     nom: "Flask",
@@ -181,7 +197,15 @@ export default [
     maitrise : "Moyenne",
     image: new URL('@/assets/img/kanban.svg', import.meta.url).href
   },
-    {
+  {
+    nom: "Google Tools",
+    usageDepuis: "2021",
+    categorie: "Outils de gestion de projet",
+    details: "Usage régulier des outils Google",
+    maitrise : "Moyenne",
+    image: new URL('@/assets/img/google.svg', import.meta.url).href
+  },
+  {
     nom: "Réaliser un développement d'application",
     usageDepuis: "2023",
     categorie: "Compétence BUT",
