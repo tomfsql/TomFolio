@@ -214,7 +214,7 @@ data() {
       const term = this.search.trim().toLowerCase();
       return this.competences
         .filter(tech => tech.nom.toLowerCase().includes(term))
-        .sort((a, b) => a.nom.localeCompare(b.nom));;
+        .sort((a, b) => a.nom.localeCompare(b.nom));
     },
     sortedCompetencesDev() {
       return this.competences
