@@ -10,7 +10,7 @@
     <RouterView></RouterView>
   </div>
 
-  <Footer>
+  <Footer/>
 </template>
 
 <script>
