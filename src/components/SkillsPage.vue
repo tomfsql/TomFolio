@@ -186,7 +186,7 @@
 <script>
 import competences from '@/assets/data/competences.js';
 export default {
-  name: 'HomePage',
+  name: 'SkillsPage',
 data() {
     return {
       search: "",
