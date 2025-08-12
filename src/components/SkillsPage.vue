@@ -4,7 +4,9 @@
   <div v-if="filteredGroupedCompetences.length">
     <div v-for="(group, gIndex) in filteredGroupedCompetences" :key="'group-' + gIndex">
       <h2>{{ group.categorie }}</h2>
-      <div class="toolgrid">
+      <div class="toolgrid"
+        :class="{ 'few-items': group.items.length < 4 }"
+      >
         <div
           class="card"
           v-for="(tech, index) in group.items"
@@ -61,8 +63,6 @@ export default {
   computed: {
     filteredGroupedCompetences() {
       const term = this.search.trim().toLowerCase();
-
-      // 1. Filtrer pour exclure BUT et appliquer recherche
       let filtered = this.competences
         .filter(
           (tech) =>
