@@ -12,7 +12,7 @@
       <h2>Langages de programmation</h2>
     
         <div v-if="sortedCompetencesDev.length">
-          <div class="skillgrid">
+          <div class="toolgrid">
             <div
               class="card"
               v-for="(tech, index) in sortedCompetencesDev"
@@ -45,7 +45,7 @@
       <h2>Langages de Bases de Données </h2>
 
       <div v-if="sortedCompetencesDB.length">
-          <div class="skillgrid">
+          <div class="toolgrid">
             <div
               class="card"
               v-for="(tech, index) in sortedCompetencesDB"
@@ -77,7 +77,7 @@
 
       <h2>Outils & systèmes</h2>
 
-      <div class="skillgrid">
+      <div class="toolgrid">
         <div
           class="card"
           v-for="(tech, index) in sortedCompetencesOutils"
@@ -99,7 +99,7 @@
 
       <h2>Gestion de projet</h2>
 
-      <div class="skillgrid">
+      <div class="toolgrid">
         <div
           class="card"
           v-for="(tech, index) in sortedCompetencesGPI"
@@ -120,7 +120,7 @@
       </div>
     </div>
 
-    <div v-else class="skillgrid">
+    <div v-else class="toolgrid">
         <div v-if="sortedCompetences.length === 0">Aucune compétence trouvée. </div>
         <div v-else>
           <div v-for="tech in sortedCompetences" :key="tech.nom">
@@ -154,7 +154,7 @@
 
     <h2> Compétences de référence liées au BUT Informatique, parcours Réalisation d'Applications </h2> 
     <div v-if="sortedCompetencesBUT.length">
-      <div class="skillgrid">
+      <div class="toolgrid">
         <div
           class="card"
           v-for="(tech, index) in sortedCompetencesBUT"
