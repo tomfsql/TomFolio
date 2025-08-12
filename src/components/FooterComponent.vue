@@ -33,7 +33,7 @@
 
 <script>
 export default {
-  name: "Footer",
+  name: "FooterComponent",
   computed: {
     emailLink() {
       const user = "tom.fasquelle";
