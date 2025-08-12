@@ -152,9 +152,7 @@
           </div>
         </div>
 
-    <p>
-      Ces compétences s'inscrivent dans un contexte lié au BUT, qui vise à développer des compétences plus générales :
-    </p>
+    <h2> Compétences de référence liées au BUT Informatique, parcours Réalisation d'Applications </h2> 
     <div v-if="sortedCompetencesBUT.length">
       <div class="skillgrid">
         <div
