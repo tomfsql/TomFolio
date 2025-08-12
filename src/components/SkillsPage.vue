@@ -191,7 +191,6 @@ data() {
     return {
       search: "",
       competences: [],
-      showCompetencesBUT : {},
       searchEmpty: true,
       sortBy: 'catégorie',
       niveaux : {
