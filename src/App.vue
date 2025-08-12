@@ -1,5 +1,5 @@
 <template>
-  <h1> Tom Fasquelle : PortFolio </h1>
+  <h1> Tom Fasquelle</h1>
   <div class="navbar">
     <RouterLink to="/"> Accueil </RouterLink>
     <RouterLink to="/about"> À propos de moi </RouterLink>

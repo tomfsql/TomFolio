@@ -21,21 +21,24 @@ button {
   width: fit-content;
   max-width: 100%; 
 }
-.grid {
-  display: grid;
-  gap: 10px;
-}
 
 .toolgrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1px;
+  gap: 5px;
+}
+
+.toolgrid.few-items {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 50vw;
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .skillgrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(580px, 1fr));
-  gap: 10px;
+  gap: 5px;
 }
 
 .card {
@@ -54,9 +57,18 @@ button {
   position: relative;
 }
 
+.expand-content {
+  transition: height 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+}
+
 .card h3 {
   margin-top: 0;
   font-size: 1.1em;
+}
+
+h3 + img {
+  padding : 0.5rem;
 }
 
 .good {
@@ -133,21 +145,8 @@ ul + li, ol + li {
   justify-content: space-evenly;
 }
 
-.expand-enter-active, .expand-leave-active {
-  transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+.expand-content {
   overflow: hidden;
-}
-
-.expand-enter-from, .expand-leave-to {
-  max-height: 0;
-  opacity: 0;
-  padding: 0;
-}
-
-.expand-enter-to, .expand-leave-from {
-  max-height: 500px;
-  opacity: 1;
-  padding: 0.5rem 0;
 }
 
 @media (max-width: 600px) {

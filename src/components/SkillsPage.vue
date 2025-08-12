@@ -1,164 +1,14 @@
 <template>
-    <h1>Mes compétences</h1>
+  <h1>Compétences (hors BUT)</h1>
 
-    <p>
-      Tout au long de mon cursus scolaire, j'ai pu développer diverses compétences techniques dans des langages et outils, présentés ci-dessous :
-    </p>
-
-      <input v-model="search" @input="checkSearch" placeholder="Rechercher une compétence par nom..." />
-
-    <div v-if="searchEmpty">
-
-      <h2>Langages de programmation</h2>
-    
-        <div v-if="sortedCompetencesDev.length">
-          <div class="toolgrid">
-            <div
-              class="card"
-              v-for="(tech, index) in sortedCompetencesDev"
-              :key="'main-' + index"
-              :class="{
-                good: tech.maitrise === 'Bonne',
-                mid: tech.maitrise === 'Moyenne',
-                begin: tech.maitrise === 'Basique'
-              }"
-              @click="toggleExpand(tech)"
-              >
-                <h3>{{ tech.nom }}</h3>
-                <img v-if="tech.image" :src="tech.image" :alt="tech.nom" 
-                  width="32" height="32" />
-                <p><strong>Depuis :</strong> {{ tech.usageDepuis }}</p>
-                <p><strong>Catégorie :</strong> {{ tech.categorie }}</p>
-                <p><strong>Maîtrise :</strong> {{ tech.maitrise }}</p>
-                <transition name="expand">
-                  <div>
-                    <p v-if="tech.expanded">
-                      <strong>Détails :</strong> {{ tech.details }}
-                    </p>
-                  </div>
-                </transition>
-            </div>
-          </div>
-        </div>
-      <div v-else>Chargement ou aucune compétence trouvée.</div>
-
-      <h2>Langages de Gestion de Bases de Données </h2>
-
-      <div v-if="sortedCompetencesDB.length">
-          <div class="toolgrid">
-            <div
-              class="card"
-              v-for="(tech, index) in sortedCompetencesDB"
-              :key="'main-' + index"
-              :class="{
-                good: tech.maitrise === 'Bonne',
-                mid: tech.maitrise === 'Moyenne',
-                begin: tech.maitrise === 'Basique'
-              }"
-              @click="toggleExpand(tech)"
-              >
-                <h3>{{ tech.nom }}</h3>
-                <img v-if="tech.image" :src="tech.image" :alt="tech.nom" 
-                  width="32" height="32" />
-                <p><strong>Depuis :</strong> {{ tech.usageDepuis }}</p>
-                <p><strong>Catégorie :</strong> {{ tech.categorie }}</p>
-                <p><strong>Maîtrise :</strong> {{ tech.maitrise }}</p>
-                <transition name="expand">
-                  <div>
-                    <p v-if="tech.expanded">
-                      <strong>Détails :</strong> {{ tech.details }}
-                    </p>
-                  </div>
-                </transition>
-            </div>
-          </div>
-        </div>
-      <div v-else>Chargement ou aucune compétence trouvée.</div>
-
-      <h2>Outils & systèmes</h2>
-
+  <div v-if="filteredGroupedCompetences.length">
+    <div v-for="(group, gIndex) in filteredGroupedCompetences" :key="'group-' + gIndex">
+      <h2>{{ group.categorie }}</h2>
       <div class="toolgrid">
         <div
           class="card"
-          v-for="(tech, index) in sortedCompetencesOutils"
-          :key="'outil-' + index"
-          :class="{ good: tech.maitrise === 'Bonne', mid: tech.maitrise === 'Moyenne',begin: tech.maitrise === 'Basique',expanded: tech.expanded }"
-          @click="toggleExpand(tech)"
-        >
-          <h3>{{ tech.nom }}</h3>
-          <img v-if="tech.image" :src="tech.image" :alt="tech.nom" 
-            width="32" height="32" />
-          <p><strong>Depuis :</strong> {{ tech.usageDepuis }}</p>
-          <p><strong>Catégorie :</strong> {{ tech.categorie }}</p>
-          <p><strong>Maîtrise :</strong> {{ tech.maitrise }}</p>
-          <p v-if="tech.expanded && tech.details">
-            {{ tech.details }}
-          </p>
-        </div>
-      </div>
-
-      <h2>Gestion de projet</h2>
-
-      <div class="toolgrid">
-        <div
-          class="card"
-          v-for="(tech, index) in sortedCompetencesGPI"
-          :key="'outil-' + index"
-          :class="{ good: tech.maitrise === 'Bonne', mid: tech.maitrise === 'Moyenne',begin: tech.maitrise === 'Basique',expanded: tech.expanded }"
-          @click="toggleExpand(tech)"
-        >
-          <h3>{{ tech.nom }}</h3>
-          <img v-if="tech.image" :src="tech.image" :alt="tech.nom" 
-            width="32" height="32" />
-          <p><strong>Depuis :</strong> {{ tech.usageDepuis }}</p>
-          <p><strong>Catégorie :</strong> {{ tech.categorie }}</p>
-          <p><strong>Maîtrise :</strong> {{ tech.maitrise }}</p>
-          <p v-if="tech.expanded && tech.details">
-            {{ tech.details }}
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div v-else class="toolgrid">
-        <div v-if="sortedCompetences.length === 0">Aucune compétence trouvée. </div>
-        <div v-else>
-          <div v-for="tech in sortedCompetences" :key="tech.nom">
-            <div
-                class="card"
-                :key="'main-' + index"
-                :class="{
-                  good: tech.maitrise === 'Bonne',
-                  mid: tech.maitrise === 'Moyenne',
-                  begin: tech.maitrise === 'Basique'
-                }"
-                @click="toggleExpand(tech)"
-                >
-                  <h3>{{ tech.nom }}</h3>
-                  <img v-if="tech.image" :src="tech.image" :alt="tech.nom" 
-                    width="32" height="32" />
-                  <p><strong>Depuis :</strong> {{ tech.usageDepuis }}</p>
-                  <p><strong>Catégorie :</strong> {{ tech.categorie }}</p>
-                  <p><strong>Maîtrise :</strong> {{ tech.maitrise }}</p>
-                  <transition name="expand">
-                    <div>
-                      <p v-if="tech.expanded">
-                        <strong>Détails :</strong> {{ tech.details }}
-                      </p>
-                    </div>
-                  </transition>
-              </div>
-            </div>
-          </div>
-        </div>
-
-    <h2> Compétences de référence liées au BUT Informatique, parcours Réalisation d'Applications </h2> 
-    <div v-if="sortedCompetencesBUT.length">
-      <div class="toolgrid">
-        <div
-          class="card"
-          v-for="(tech, index) in sortedCompetencesBUT"
-          :key="'but-' + index"
+          v-for="(tech, index) in group.items"
+          :key="'tech-' + gIndex + '-' + index"
           :class="{
             good: tech.maitrise === 'Bonne',
             mid: tech.maitrise === 'Moyenne',
@@ -167,92 +17,130 @@
           @click="toggleExpand(tech)"
         >
           <h3>{{ tech.nom }}</h3>
-          <img v-if="tech.image" :src="tech.image" :alt="tech.nom" width="32" height="32" />
-            <p><strong>Maîtrise :</strong> {{ tech.maitrise }}</p>
-            <transition name="expand">
-              <div>
-                <p v-if="tech.expanded">
-                  <strong>Détails :</strong> {{ tech.details }}
-                </p>
-              </div>
-            </transition>
-        </div>
+          <img
+            v-if="tech.image"
+            :src="tech.image"
+            :alt="tech.nom"
+            width="32"
+            height="32"
+          />
+          <p><strong>Maîtrise :</strong> {{ tech.maitrise }}</p>
+
+          <transition name="expand"
+            @before-enter="beforeEnter"
+            @enter="enter"
+            @before-leave="beforeLeave"
+            @leave="leave">
+          <div v-if="tech.expanded && tech.details">
+            <p>{{ tech.details }}</p>
+          </div>
+        </transition>
         </div>
       </div>
-    <div v-else>Chargement ou aucune compétence BUT trouvée.</div>
-
+    </div>
+  </div>
+  <div v-else>Chargement ou aucune compétence trouvée.</div>
 </template>
 
 <script>
-import competences from '@/assets/data/competences.js';
+import competences from "@/assets/data/competences.js";
+
 export default {
-  name: 'SkillsPage',
-data() {
+  name: "SkillsPage",
+  data() {
     return {
-      search: "",
       competences: [],
-      searchEmpty: true,
-      sortBy: 'catégorie',
-      niveaux : {
-        "Bonne": 3,
-        "Moyenne": 2,
-        "Basique": 1
+      search: "",
+      showCompetences: {},
+      niveaux: {
+        Bonne: 3,
+        Moyenne: 2,
+        Basique: 1
       }
     };
   },
   computed: {
-    sortedCompetences() {
+    filteredGroupedCompetences() {
       const term = this.search.trim().toLowerCase();
-      return this.competences
-        .filter(tech => tech.nom.toLowerCase().includes(term))
-        .sort((a, b) => a.nom.localeCompare(b.nom));
-    },
-    sortedCompetencesDev() {
-      return this.competences
+
+      // 1. Filtrer pour exclure BUT et appliquer recherche
+      let filtered = this.competences
         .filter(
-          tech => tech.categorie.toLowerCase().includes('programmation') ||
-          tech.categorie.toLowerCase().includes('framework')
+          (tech) =>
+            !tech.categorie.toLowerCase().includes("but") &&
+            tech.nom.toLowerCase().includes(term)
         )
-        .sort((a, b) => a.nom.localeCompare(b.nom));
-    },
-    sortedCompetencesOutils() {
-      return this.competences
-        .filter(tech => tech.categorie.toLowerCase().includes('système') && 
-          !tech.categorie.toLowerCase().includes('langage'))
-        .sort((a, b) => a.nom.localeCompare(b.nom));
-    },
-    sortedCompetencesDB() {
-      return this.competences
-        .filter(tech => tech.categorie.toLowerCase().includes('base de données'))
-        .sort((a, b) => a.nom.localeCompare(b.nom));
-    },
-    sortedCompetencesGPI() {
-      return this.competences
-        .filter(tech => tech.categorie.toLowerCase().includes('modélisation') || 
-          tech.categorie.toLowerCase().includes('gestion'))
-        .sort((a, b) => a.nom.localeCompare(b.nom));
-    },
-    sortedCompetencesBUT() {
-    return this.competences
-      .filter(tech => tech.categorie.toLowerCase().includes('but'))
-  }
+        .map((tech) => {
+          // 2. Regrouper BD
+          const bdKeywords = ["base"];
+          const progKeywords = ["programmation"];
+
+          if (bdKeywords.includes(tech.categorie.toLowerCase())) {
+            return { ...tech, categorie: "Langages de manipulation de BD" };
+          }
+          if (progKeywords.includes(tech.categorie.toLowerCase())) {
+            return { ...tech, categorie: "Langages & Frameworks" };
+          }
+          return tech;
+        });
+
+      const groups = {};
+      filtered.forEach((tech) => {
+        if (!groups[tech.categorie]) groups[tech.categorie] = [];
+        groups[tech.categorie].push(tech);
+      });
+
+      const order = ["Langages de manipulation de BD", "Langages & Frameworks"];
+      const orderedKeys = [
+        ...order,
+        ...Object.keys(groups).filter((cat) => !order.includes(cat)).sort()
+      ].filter(cat => groups[cat]);
+
+      return orderedKeys.map((cat) => ({
+        categorie: cat,
+        items: groups[cat].sort((a, b) => a.nom.localeCompare(b.nom))
+      }));
+    }
   },
   methods: {
     toggleExpand(competence) {
       competence.expanded = !competence.expanded;
     },
-    checkSearch() {
-      this.searchEmpty = this.search.trim() === "";
-    },
     initializeDisplayStates(competencesData) {
-      this.showCompetencesBUT = Object.keys(competencesData).reduce((acc, key) => {
-        acc[key] = true;
+      this.showCompetences = competencesData.reduce((acc, tech) => {
+        acc[tech.nom] = true;
         return acc;
       }, {});
+    },
+    beforeEnter(el) {
+      el.style.height = '0';
+      el.style.opacity = '0';
+    },
+    enter(el, done) {
+      el.style.transition = 'height 0.3s ease, opacity 0.3s ease';
+      void el.offsetHeight;
+      el.style.height = el.scrollHeight + 'px';
+      el.style.opacity = '1';
+      el.addEventListener('transitionend', () => {
+        el.style.height = 'auto';
+        done();
+      }, { once: true });
+    },
+    beforeLeave(el) {
+      el.style.height = el.scrollHeight + 'px';
+      el.style.opacity = '1';
+      void el.offsetHeight; 
+    },
+    leave(el, done) {
+      el.style.transition = 'height 0.3s ease, opacity 0.3s ease';
+      el.style.height = '0';
+      el.style.opacity = '0';
+      el.addEventListener('transitionend', done, { once: true });
     }
   },
   mounted() {
-    this.competences = competences.map(c => ({ ...c, expanded: false }));
+    this.competences = competences.map((c) => ({ ...c, expanded: false }));
+    this.initializeDisplayStates(this.competences);
   }
-}
+};
 </script>

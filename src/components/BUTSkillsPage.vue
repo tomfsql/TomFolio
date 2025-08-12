@@ -23,10 +23,13 @@
           height="32"
         />
         <p><strong>Maîtrise :</strong> {{ tech.maitrise }}</p>
-
-        <transition name="expand">
-          <div v-if="tech.expanded">
-            <p><strong>Détails :</strong> {{ tech.details }}</p>
+        <transition name="expand"
+            @before-enter="beforeEnter"
+            @enter="enter"
+            @before-leave="beforeLeave"
+            @leave="leave">
+          <div v-if="tech.expanded && tech.details">
+            <p>{{ tech.details }}</p>
           </div>
         </transition>
       </div>
@@ -67,6 +70,31 @@ export default {
         acc[tech.nom] = true;
         return acc;
       }, {});
+    },
+    beforeEnter(el) {
+      el.style.height = '0';
+      el.style.opacity = '0';
+    },
+    enter(el, done) {
+      el.style.transition = 'height 0.3s ease, opacity 0.3s ease';
+      void el.offsetHeight;
+      el.style.height = el.scrollHeight + 'px';
+      el.style.opacity = '1';
+      el.addEventListener('transitionend', () => {
+        el.style.height = 'auto';
+        done();
+      }, { once: true });
+    },
+    beforeLeave(el) {
+      el.style.height = el.scrollHeight + 'px';
+      el.style.opacity = '1';
+      void el.offsetHeight; 
+    },
+    leave(el, done) {
+      el.style.transition = 'height 0.3s ease, opacity 0.3s ease';
+      el.style.height = '0';
+      el.style.opacity = '0';
+      el.addEventListener('transitionend', done, { once: true });
     }
   },
   mounted() {
