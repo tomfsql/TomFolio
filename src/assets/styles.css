@@ -21,10 +21,8 @@ button {
   width: fit-content;
   max-width: 100%; 
 }
-
-.skillgrid {
+.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 10px;
 }
 
