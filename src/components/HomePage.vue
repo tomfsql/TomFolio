@@ -26,38 +26,6 @@
     </p>
   </div>
 
-
-
-    <footer> 
-    
-    <div class="footer-content">
-      <div class="footer-info">
-        <h3> Tom Fasquelle </h3>
-        <p>Étudiant en BUT Informatique | Développeur web & logiciel junior</p>
-      </div>
-    </div>
-
-    <div class="footer-contact">
-      Me contacter :
-          <a href="mailto:tom.fasquelle@laposte.net">
-            <i class="fas fa-envelope"></i></a>
-    </div>
-
-    <div class="footer-social">
-        <a href="https://www.linkedin.com/in/tom-fasquelle/" target="_blank" rel="noopener">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/fasquelt" target="_blank" rel="noopener">
-          <i class="fab fa-github"></i>
-        </a>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; Tom Fasquelle 2025 - Tous droits réservés</p>
-    </div>
-
-    <div id="ecoindex-badge" data-theme="dark"></div>
-    <script src="https://cdn.jsdelivr.net/gh/cnumr/ecoindex_badge@3/assets/js/ecoindex-badge.js" defer></script>
-  </footer>
 </template>
 
 <script>
