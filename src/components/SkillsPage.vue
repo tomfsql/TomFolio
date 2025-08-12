@@ -31,10 +31,10 @@
             @enter="enter"
             @before-leave="beforeLeave"
             @leave="leave">
-          <div v-if="tech.expanded && tech.details">
-            <p>{{ tech.details }}</p>
-          </div>
-        </transition>
+            <div v-if="tech.expanded && tech.details">
+              <p>{{ tech.details }}</p>
+            </div>
+          </transition>
         </div>
       </div>
     </div>
@@ -51,7 +51,6 @@ export default {
     return {
       competences: [],
       search: "",
-      showCompetences: {},
       niveaux: {
         Bonne: 3,
         Moyenne: 2,
@@ -71,15 +70,19 @@ export default {
             tech.nom.toLowerCase().includes(term)
         )
         .map((tech) => {
-          // 2. Regrouper BD
-          const bdKeywords = ["base"];
-          const progKeywords = ["programmation"];
+          const catLower = tech.categorie.toLowerCase();
 
-          if (bdKeywords.includes(tech.categorie.toLowerCase())) {
+          if (catLower.includes("base")) {
             return { ...tech, categorie: "Langages de manipulation de BD" };
           }
-          if (progKeywords.includes(tech.categorie.toLowerCase())) {
+          if (catLower.includes("programmation") || catLower.includes("framework")) {
             return { ...tech, categorie: "Langages & Frameworks" };
+          }
+          if (catLower.includes("système") || catLower.includes("os")) {
+            return { ...tech, categorie: "Outils & système" };
+          }
+          if (catLower.includes("gestion de projet") || catLower.includes("modélisation")) {
+            return { ...tech, categorie: "Gestion de projet & Modélisation" };
           }
           return tech;
         });
@@ -90,7 +93,13 @@ export default {
         groups[tech.categorie].push(tech);
       });
 
-      const order = ["Langages de manipulation de BD", "Langages & Frameworks"];
+      const order = [
+        "Langages & Frameworks",
+        "Langages de manipulation de BD",
+        "Outils & système",
+        "Gestion de projet & Modélisation"
+      ];
+
       const orderedKeys = [
         ...order,
         ...Object.keys(groups).filter((cat) => !order.includes(cat)).sort()
@@ -98,7 +107,7 @@ export default {
 
       return orderedKeys.map((cat) => ({
         categorie: cat,
-        items: groups[cat].sort((a, b) => a.nom.localeCompare(b.nom))
+        items: (groups[cat] || []).sort((a, b) => a.nom.localeCompare(b.nom))
       }));
     }
   },
@@ -106,41 +115,41 @@ export default {
     toggleExpand(competence) {
       competence.expanded = !competence.expanded;
     },
-    initializeDisplayStates(competencesData) {
-      this.showCompetences = competencesData.reduce((acc, tech) => {
-        acc[tech.nom] = true;
-        return acc;
-      }, {});
-    },
     beforeEnter(el) {
       el.style.height = '0';
       el.style.opacity = '0';
+      el.style.overflow = 'hidden';
     },
     enter(el, done) {
       el.style.transition = 'height 0.3s ease, opacity 0.3s ease';
       void el.offsetHeight;
       el.style.height = el.scrollHeight + 'px';
       el.style.opacity = '1';
+      el.style.overflow = 'hidden';
       el.addEventListener('transitionend', () => {
         el.style.height = 'auto';
+        el.style.overflow = '';
         done();
       }, { once: true });
     },
     beforeLeave(el) {
       el.style.height = el.scrollHeight + 'px';
       el.style.opacity = '1';
-      void el.offsetHeight; 
+      el.style.overflow = 'hidden';
+      void el.offsetHeight;
     },
     leave(el, done) {
       el.style.transition = 'height 0.3s ease, opacity 0.3s ease';
       el.style.height = '0';
       el.style.opacity = '0';
-      el.addEventListener('transitionend', done, { once: true });
+      el.addEventListener('transitionend', () => {
+        el.style.overflow = '';
+        done();
+      }, { once: true });
     }
   },
   mounted() {
     this.competences = competences.map((c) => ({ ...c, expanded: false }));
-    this.initializeDisplayStates(this.competences);
   }
 };
 </script>
