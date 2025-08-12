@@ -15,7 +15,7 @@
 
 <script>
  import { RouterLink, RouterView } from 'vue-router'
- import Footer from "./components/Footer.vue";
+ import Footer from "./components/FooterComponent.vue";
 
 export default {
   name: 'App',
