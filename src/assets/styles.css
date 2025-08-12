@@ -29,18 +29,22 @@ button {
 .toolgrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 10px;}
+  gap: 1px;
+}
+
+.skillgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(580px, 1fr));
+  gap: 10px;
+}
 
 .card {
   flex: 1 0 200px;
   border: 1px solid #ccc;
   padding: 1rem;
-  box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
   border-radius: 10px;
   background: white;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  overflow: hidden;
 }
 
 .card.expanded {

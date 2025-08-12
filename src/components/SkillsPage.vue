@@ -42,7 +42,7 @@
         </div>
       <div v-else>Chargement ou aucune compétence trouvée.</div>
 
-      <h2>Langages de Bases de Données </h2>
+      <h2>Langages de Gestion de Bases de Données </h2>
 
       <div v-if="sortedCompetencesDB.length">
           <div class="toolgrid">
@@ -253,8 +253,6 @@ data() {
   },
   mounted() {
     this.competences = competences.map(c => ({ ...c, expanded: false }));
-    this.initializeDisplayStates(this.showCompetencesBUT);
-
   }
 }
 </script>

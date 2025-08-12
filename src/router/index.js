@@ -8,11 +8,11 @@ import BUTSkillsPage from '@/components/BUTSkillsPage.vue'
 const router = createRouter({
   history: createWebHistory(process.env.VUE_BASE_URL),
   routes: [
-    { path: '/', name: 'Home', component: HomePage },
+    { path: '/', name: 'Accueil', component: HomePage },
     { path: '/about', name: 'À propos de moi', component: AboutPage },
     { path: '/projects', name: 'Projets', component: ProjectsPage },
     { path: '/skills', name: 'Compétences techniques', component: SkillsPage },
-    { path: '/BUT', name: 'Compétences du BUT', component: BUTSkillsPage }
+    { path: '/BUTskills', name: 'Compétences du BUT', component: BUTSkillsPage }
   ],
   scrollBehavior(to) {
     if (to.hash) {

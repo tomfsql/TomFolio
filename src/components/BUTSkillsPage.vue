@@ -2,7 +2,7 @@
   <h1>Compétences de référence liées au BUT Informatique, parcours Réalisation d'Applications</h1>
 
   <div v-if="sortedCompetencesBUT.length">
-    <div class="toolgrid">
+    <div class="skillgrid">
       <div
         class="card"
         v-for="(tech, index) in sortedCompetencesBUT"
@@ -43,7 +43,6 @@ export default {
   data() {
     return {
       competences: [], 
-      search: "",
       showCompetencesBUT: {},
       niveaux: {
         Bonne: 3,
