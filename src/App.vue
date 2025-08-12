@@ -9,6 +9,8 @@
   <div class="content">
     <RouterView></RouterView>
   </div>
+
+  <Footer></Footer>
 </template>
 
 <script>
