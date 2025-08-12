@@ -27,6 +27,7 @@
       <p>&copy; Tom Fasquelle 2025 - Tous droits réservés</p>
     </div>
 
+    <div id="ecoindex-badge" data-theme="dark"></div>
   </footer>
 </template>
 
