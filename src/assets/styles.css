@@ -17,7 +17,7 @@ input {
 
 button {
   padding: 3px;
-  margin : 1rem;
+  margin: 1rem;
   width: fit-content;
   max-width: 100%; 
 }
@@ -47,28 +47,28 @@ button {
   padding: 1rem;
   border-radius: 10px;
   background: white;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .card.expanded {
-  transform: scale(1.05);
+  /* Suppression du scale, seulement ombre */
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
   z-index: 1;
   position: relative;
 }
 
-.expand-enter-active,
-.expand-leave-active {
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+.expand-content {
   overflow: hidden;
+  transition: height 0.3s ease, opacity 0.3s ease;
 }
+
 .card h3 {
   margin-top: 0;
   font-size: 1.1em;
 }
 
 h3 + img {
-  padding : 0.5rem;
+  padding: 0.5rem;
 }
 
 .good {
@@ -79,7 +79,7 @@ h3 + img {
   border-left: 5px solid yellowgreen;
 }
 
-.begin{
+.begin {
   border-left: 5px solid rgb(202, 141, 9);
 }
 
@@ -88,20 +88,21 @@ h3 {
   text-align: left;
 }
 
-.brief{
+.brief {
   text-align: center;
 }
 
-ul, ol{
+ul, ol {
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center; 
 }
+
 ul {
-   list-style: none; 
- }
+  list-style: none; 
+}
 
 ol {
   border: 1px solid #ccc;
@@ -116,7 +117,7 @@ ul + li, ol + li {
   text-align: center;
 }
 
-.collapsebtn{
+.collapsebtn {
   height: fit-content;
   border-radius: 50%;
 }
@@ -139,14 +140,10 @@ ul + li, ol + li {
   border: 2px dotted black;
 }
 
-.navbar{
+.navbar {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-}
-
-.expand-content {
-  overflow: hidden;
 }
 
 @media (max-width: 600px) {
@@ -174,6 +171,7 @@ ul + li, ol + li {
   }
 }
 
+/* Footer */
 .portfolio-footer {
   background-color: #222;
   color: #eee;
@@ -197,7 +195,7 @@ ul + li, ol + li {
 }
 
 .footer-contact {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .footer-social {
