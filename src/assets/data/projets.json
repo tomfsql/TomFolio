@@ -54,7 +54,7 @@
         "details": "Développement d'un site web en JavaScript",
         "techno": "HTML / CSS / JS",
         "competences": "1,2",
-        "url": "https://github.com/fasquelt/BoutiqueJS"
+        "url": "https://github.com/tomfsql/BoutiqueJS"
       }
     ]
   },
@@ -77,7 +77,7 @@
         "details": "Affichage dynamique des données via une application Vue.js.\nCommunication entre WebView (VueJS) et une application C#.",
         "techno": "Vue.js / C#",
         "competences": "1,2,3",
-        "url": "https://github.com/fasquelt/PropertyGridWithCore2"
+        "url": "https://github.com/tomfsql/PropertyGridWithCore2"
       }
     ]
  }
