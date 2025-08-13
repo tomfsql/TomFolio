@@ -62,23 +62,6 @@ button {
   transition: max-height 0.3s ease, opacity 0.3s ease;
   overflow: hidden;
 }
-
-.expand-enter-from,
-.expand-leave-to {
-  max-height: 0;
-  opacity: 0;
-}
-
-.expand-enter-to,
-.expand-leave-from {
-  max-height: 500px; /* mettre une valeur assez grande */
-  opacity: 1;
-}
-
-.expand-content {
-  padding: 8px 0;
-}
-
 .card h3 {
   margin-top: 0;
   font-size: 1.1em;
