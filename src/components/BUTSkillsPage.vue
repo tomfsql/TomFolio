@@ -72,30 +72,32 @@ export default {
       }, {});
     },
     beforeEnter(el) {
+    el.style.height = '0';
+    el.style.opacity = '0';
+    el.style.overflow = 'hidden';
+  },
+  enter(el, done) {
+    const height = el.scrollHeight + 'px';
+    el.style.transition = 'height 0.3s ease, opacity 0.3s ease';
+    requestAnimationFrame(() => {
+      el.style.height = height;
+      el.style.opacity = '1';
+    });
+    el.addEventListener('transitionend', done, { once: true });
+  },
+  beforeLeave(el) {
+    el.style.height = el.scrollHeight + 'px';
+    el.style.opacity = '1';
+    el.style.overflow = 'hidden';
+  },
+  leave(el, done) {
+    el.style.transition = 'height 0.3s ease, opacity 0.3s ease';
+    requestAnimationFrame(() => {
       el.style.height = '0';
       el.style.opacity = '0';
-    },
-    enter(el, done) {
-      el.style.transition = 'height 0.3s ease, opacity 0.3s ease';
-      void el.offsetHeight;
-      el.style.height = el.scrollHeight + 'px';
-      el.style.opacity = '1';
-      el.addEventListener('transitionend', () => {
-        el.style.height = 'auto';
-        done();
-      }, { once: true });
-    },
-    beforeLeave(el) {
-      el.style.height = el.scrollHeight + 'px';
-      el.style.opacity = '1';
-      void el.offsetHeight; 
-    },
-    leave(el, done) {
-      el.style.transition = 'height 0.3s ease, opacity 0.3s ease';
-      el.style.height = '0';
-      el.style.opacity = '0';
-      el.addEventListener('transitionend', done, { once: true });
-    }
+    });
+    el.addEventListener('transitionend', done, { once: true });
+  }
   },
   mounted() {
     this.competences = competences.map(c => ({ ...c, expanded: false }));
