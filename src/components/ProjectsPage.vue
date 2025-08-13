@@ -19,7 +19,6 @@
             <div v-if="showProjects[projet.id]">
               <p><strong>Période :</strong> {{ projet.date }}</p>
               <p><strong>Langages utilisés :</strong> {{ projet.techno }}</p>
-              <p><strong>Informations complémentaires :</strong></p>
               <p> {{  projet.details }}</p>            
               <p><strong>Compétences mobilisées :</strong> {{  projet.competences }} </p>
               <div v-if="projet.url">

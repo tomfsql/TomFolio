@@ -15,7 +15,7 @@
         "titre": "Application web de gestion d'exercices",
         "id": "Exercices",
         "date": "BUT3 – Semestre 5",
-        "details": "Projet du cours de programmation front-end.\nUtilisation d'Angular pour un rendu dynamique et ergonomique.",
+        "details": "Projet du cours de programmation front-end ( S5 ).",
         "techno": "Angular",
         "competences": "1,3",
         "url": "https://forge.univ-lyon1.fr/p2310802/AngularS5"
@@ -25,7 +25,7 @@
         "id": "SiteWeb",
         "date": "BUT Année Spéciale – Semestre 3",
         "details": "Développement en binôme, prise en charge du responsive design.",
-        "techno": "HTML / CSS",
+        "techno": "HTML & CSS",
         "competences": "1,4,5",
         "url": "https://forge.univ-lyon1.fr/p2310802/sae_web"
       },
@@ -33,7 +33,7 @@
         "titre": "Jeu en ligne interactif",
         "id": "QDev",
         "date": "BUT3 – Semestre 5",
-        "details": "Projet de la matière Qualité de Développement, création de tests unitaires avec Pytest pour le pipeline CI.",
+        "details": "Projet scolaire, création de tests unitaires avec Pytest pour le pipeline CI/CD.",
         "techno": "Python / Pytest",
         "competences": "1,3,4,5",
         "url": "https://forge.univ-lyon1.fr/p2310802/qdevs5"
@@ -42,8 +42,8 @@
         "titre": "ERP du Département Informatique de l'IUT Lyon 1",
         "id": "SAE",
         "date": "BUT3 – Semestre 5 et 6",
-        "details": "Projet de classe du semestre 5, j'ai notamment développé un générateur de lien",
-        "techno": "Angular, puis Next & Express.js",
+        "details": "Projet de classe du semestre 5 et 6, développement d'un générateur de lien",
+        "techno": "Angular au 5e semestre, puis Next & Express.js",
         "competences": "1,3,4,5",
         "url": "https://forge.univ-lyon1.fr/sae-ra3-2024-2025"
       },
