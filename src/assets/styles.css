@@ -51,7 +51,6 @@ button {
 }
 
 .card.expanded {
-  /* Suppression du scale, seulement ombre */
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
   z-index: 1;
   position: relative;
@@ -169,9 +168,16 @@ ul + li, ol + li {
     flex-direction: column;
     align-items: center;
   }
+  .skillgrid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
 }
 
-/* Footer */
 .portfolio-footer {
   background-color: #222;
   color: #eee;
