@@ -33,7 +33,7 @@
             @enter="enter"
             @before-leave="beforeLeave"
             @leave="leave">
-            <div v-if="tech.expanded && tech.details">
+            <div v-if="tech.expanded && tech.details" class="expand-content">
               <p>{{ tech.details }}</p>
             </div>
           </transition>
