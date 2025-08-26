@@ -218,7 +218,7 @@ export default [
     usageDepuis: "2023",
     categorie: "Compétence BUT",
     maitrise: "Bonne",
-    details: "Améliorer un code existant après analyse de son comportement, remplacer des technologies si nécessaire pour améliorer son fonctionnement",
+    details: "Améliorer un code existant après analyse de son comportement, comparer différentes solutions pour sélectionner la plus adéquate",
     image: new URL('@/assets/img/optimize.png', import.meta.url).href
   },
   {
