@@ -1,6 +1,14 @@
 <template>
   <h1>Compétences (hors BUT)</h1>
 
+    <div class="search-bar">
+      <input
+        type="text"
+        v-model="search"
+        placeholder="Rechercher une compétence..."
+      />
+    </div>
+
   <div v-if="filteredGroupedCompetences.length">
     <div v-for="group in filteredGroupedCompetences" :key="group.categorie">
       <h2>{{ group.categorie }}</h2>
