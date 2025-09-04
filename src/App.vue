@@ -5,7 +5,7 @@
     <RouterLink to="/about"> À propos de moi </RouterLink>
     <RouterLink to="/projects"> Projets </RouterLink>
     <RouterLink to="/skills"> Compétences techniques </RouterLink>
-    <RouterLink to="/BUTskills"> Compétences du BUT </RouterLink>
+    <RouterLink to="/BUTskills"> Compétences académiques </RouterLink>
   </div>
   <div class="content">
     <RouterView></RouterView>
