@@ -3,7 +3,7 @@
     <div class="footer-content">
       <div class="footer-info">
         <h3>Tom Fasquelle</h3>
-        <p>Étudiant en BUT Informatique | Développeur web & logiciel junior</p>
+        <p>Élève-ingénieur en Informatique & Réseaux de Communication à CPE Lyon | Développeur web & logiciel junior chez ENFRASYS </p>
       </div>
 
       <div class="footer-contact">
