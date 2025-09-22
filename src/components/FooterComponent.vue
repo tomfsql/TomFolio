@@ -3,7 +3,7 @@
     <div class="footer-content">
       <div class="footer-info">
         <h3>Tom Fasquelle</h3>
-        <p>Élève-ingénieur en Informatique & Réseaux de Communication à CPE Lyon | Développeur web & logiciel junior chez ENFRASYS </p>
+        <p>Élève-ingénieur en Informatique à CPE Lyon | Développeur web & logiciel junior chez ENFRASYS </p>
       </div>
 
       <div class="footer-contact">
@@ -17,7 +17,7 @@
         <a href="https://www.linkedin.com/in/tom-fasquelle/" target="_blank" rel="noopener" aria-label="LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
-        <a href="https://github.com/fasquelt" target="_blank" rel="noopener" aria-label="GitHub">
+        <a href="https://github.com/tomfsql" target="_blank" rel="noopener" aria-label="GitHub">
           <i class="fab fa-github"></i>
         </a>
       </div>

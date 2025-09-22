@@ -4,7 +4,7 @@ export default [
     usageDepuis: "2021",
     categorie: "Langage orienté-objet de programmation logicielle",
     maitrise: "Bonne",
-    details: "Langage utilisé régulièrement dans mon cursus, avec les concepts d'héritage, polymorphisme, Swing pour créer des IHM ( en s'appuyant sur les Model )",
+    details: "Langage utilisé régulièrement dans mon cursus, avec les concepts d'héritage, polymorphisme. Usage de Swing pour créer des IHM",
     image: new URL('@/assets/img/java.svg', import.meta.url).href
   },
   {
@@ -185,7 +185,7 @@ export default [
     nom: "Agile / Scrum ",
     usageDepuis: "2024",
     categorie: "Méthode de gestion de projet",
-    details: "Connaissance et utilisation des principes Agile, Scrum",
+    details: "Connaissance et utilisation des principes Agile et mise en place via la méthodologie Scrum",
     maitrise : "Moyenne",
     image: new URL('@/assets/img/agile.svg', import.meta.url).href
   },
