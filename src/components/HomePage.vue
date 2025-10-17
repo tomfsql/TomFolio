@@ -26,6 +26,10 @@
     </p>
   </div>
 
+  <a href="@/cv.pdf" download="CVFASQUELLETom.pdf">
+    <button>Télécharger mon CV</button>
+  </a>
+
 </template>
 
 <script>
