@@ -1,7 +1,6 @@
 export default [
   {
     nom: "Java",
-    usageDepuis: "2021",
     categorie: "Langage orienté-objet de programmation logicielle",
     maitrise: "Bonne",
     details: "Langage utilisé régulièrement dans mon cursus, avec les concepts d'héritage, polymorphisme. Usage de Swing pour créer des IHM",
@@ -9,7 +8,6 @@ export default [
   },
   {
     nom: "C",
-    usageDepuis: "2021",
     categorie: "Langage impératif de programmation logicielle",
     maitrise: "Moyenne",
     details: "Langage utilisé en Année Spéciale uniquement",
@@ -17,7 +15,6 @@ export default [
   },
   {
     nom: "JavaScript/TypeScript",
-    usageDepuis: "2024",
     categorie: "Langage de programmation web",
     maitrise: "Bonne",
     details: "Langage fréquemment utilisé en cours et en entreprise, que ce soit en framework ou non, pour des projets",
@@ -25,7 +22,6 @@ export default [
   },
   {
     nom: "Python",
-    usageDepuis: "2023",
     categorie: "Langage de programmation web et logicielle",
     maitrise: "Bonne",
     details: "Utilisé en programmation multimédia, avec FastAPI dans le cadre d'un projet, ainsi que pour des tests unitaires",
@@ -33,7 +29,6 @@ export default [
   },
   {
     nom: "PHP",
-    usageDepuis: "2024",
     categorie: "Langage de programmation web",
     maitrise: "Basique",
     details: "Langage uniquement utilisé en cours en Année Spéciale",
@@ -41,7 +36,6 @@ export default [
   },
   {
     nom: "C#",
-    usageDepuis: "2024",
     categorie: "Langage de programmation logicielle",
     maitrise: "Moyenne",
     details: "Utilisé en entreprise pour le lien avec un navigateur web contenant une application, et dans d'autres missions",
@@ -49,7 +43,6 @@ export default [
   },
   {
     nom: "Arduino",
-    usageDepuis: "2024",
     categorie: "Langage de programmation embarquée",
     maitrise: "Moyenne",
     details: "Utilisé en entreprise pour la programmation sur des cartes STM32",
@@ -57,7 +50,6 @@ export default [
   },
   {
     nom: "C++",
-    usageDepuis: "2024",
     categorie: "Langage de programmation logicielle",
     maitrise: "Basique",
     details: "Introduit brièvement en entreprise pour des petits correctifs",
@@ -65,7 +57,6 @@ export default [
   },
   {
     nom: "Angular",
-    usageDepuis: "2024",
     categorie: "Framework web",
     maitrise: "Bonne",
     details: "Utilisé en cours au S5, ainsi que pour un projet en BUT3",
@@ -73,7 +64,6 @@ export default [
   },
   {
     nom: "Vue.js",
-    usageDepuis: "2024",
     categorie: "Framework web",
     maitrise: "Bonne",
     details: "Vu en cours au S4 d'Année Spéciale, puis utilisé en entreprise et pour le portfolio",
@@ -81,7 +71,6 @@ export default [
   },
   {
     nom: "Next.js",
-    usageDepuis: "2025",
     categorie: "Framework web",
     maitrise: "Moyenne",
     details: "Utilisé en BUT3 pour le front-end d'un projet",
@@ -89,7 +78,6 @@ export default [
   },
   {
     nom: "Express.js",
-    usageDepuis: "2025",
     categorie: "Framework web",
     maitrise: "Moyenne",
     details: "Utilisé en BUT3 pour le back-end d'un projet",
@@ -97,7 +85,6 @@ export default [
   },
   {
     nom: "Flask",
-    usageDepuis: "2024",
     categorie: "Framework web",
     maitrise: "Bonne",
     details: "Usage en entreprise afin de créer une application interne de gestion des données",
@@ -105,7 +92,6 @@ export default [
   },
   {
     nom: "MySQL & PL/SQL",
-    usageDepuis: "2024",
     categorie: "Langage de manipulation de Base de Données basé sur SQL",
     maitrise: "Moyenne",
     details: "Langage vu en cours mais non-utilisé depuis",
@@ -113,7 +99,6 @@ export default [
   },
   {
     nom: "MongoDB",
-    usageDepuis: "2024",
     categorie: "Langage de manipulation de Base de Données",
     maitrise: "Moyenne",
     details: "Usage dans le cadre d'un cours sur les nouveaux paradigmes de Bases de Données",
@@ -121,7 +106,6 @@ export default [
   },
   {
     nom: "Neo4J",
-    usageDepuis: "2024",
     categorie: "Langage de manipulation de Base de Données",
     maitrise: "Moyenne",
     details: "Usage dans le cadre d'un cours sur les nouveaux paradigmes de Bases de Données",
@@ -129,7 +113,6 @@ export default [
   },
   {
     nom: "Git",
-    usageDepuis: "2024",
     categorie: "Outil système de versioning",
     maitrise: "Bonne",
     details: "Usage depuis 2021, utilisé dans de nombreux cours et projets, familier avec la CLI. Usage de GitHub et GitLab",
@@ -137,21 +120,18 @@ export default [
   },
   {
     nom: "Windows",
-    usageDepuis: "2021",
     categorie: "Système d'exploitation",
     maitrise: "Bonne",
     image: new URL('@/assets/img/windows.svg', import.meta.url).href
   },
   {
     nom: "GNU/Linux",
-    usageDepuis: "2021",
     categorie: "Système d'exploitation",
     maitrise: "Bonne",
     image: new URL('@/assets/img/linux.svg', import.meta.url).href
   },
   {
     nom: "Docker",
-    usageDepuis: "2024",
     categorie: "Outil système de conteneurisation",
     maitrise: "Moyenne",
     details: "Outil utilisé à de nombreuses reprises en cours",
@@ -159,7 +139,6 @@ export default [
   },
   {
     nom: "Bash",
-    usageDepuis: "2024",
     categorie: "Langage système",
     maitrise: "Moyenne",
     details: "Langage vu en cours et utilisé au quotidien sur mon ordinateur personnel",
@@ -167,7 +146,6 @@ export default [
   },
   {
     nom: "UML",
-    usageDepuis: "2024",
     categorie: "Outil de modélisation",
     details: "Langage de modélisation de Base de Données",
     maitrise : "Moyenne",
@@ -175,7 +153,6 @@ export default [
   },
   {
     nom: "Trello",
-    usageDepuis: "2024",
     categorie: "Outil de gestion de projet",
     details: "Application et site web destinée à la gestion de projets",
     maitrise : "Moyenne",
@@ -183,7 +160,6 @@ export default [
   },
   {
     nom: "Agile / Scrum ",
-    usageDepuis: "2024",
     categorie: "Méthode de gestion de projet",
     details: "Connaissance et utilisation des principes Agile et mise en place via la méthodologie Scrum",
     maitrise : "Moyenne",
@@ -191,7 +167,6 @@ export default [
   },
   {
     nom: "Kanban ",
-    usageDepuis: "2024",
     categorie: "Méthode de gestion de projet",
     details: "Connaissance et utilisation de la méthode Kanban",
     maitrise : "Moyenne",
@@ -199,7 +174,6 @@ export default [
   },
   {
     nom: "Google Tools",
-    usageDepuis: "2021",
     categorie: "Outils de gestion de projet",
     details: "Usage régulier des outils Google",
     maitrise : "Moyenne",
@@ -207,7 +181,6 @@ export default [
   },
   {
     nom: "Réaliser un développement d'application",
-    usageDepuis: "2023",
     categorie: "Compétence BUT",
     maitrise: "Bonne",
     details: "Choisir les bonnes technologies, intégrer des applications dans des environnements de production et savoir les maintenir en état",
@@ -215,7 +188,6 @@ export default [
   },
   {
     nom: "Optimiser des applications",
-    usageDepuis: "2023",
     categorie: "Compétence BUT",
     maitrise: "Bonne",
     details: "Améliorer un code existant après analyse de son comportement, comparer différentes solutions pour sélectionner la plus adéquate",
@@ -223,7 +195,6 @@ export default [
   },
   {
     nom: "Administrer des systèmes informatiques communicants complexes",
-    usageDepuis: "2023",
     categorie: "Compétence BUT",
     maitrise: "Bonne",
     details: "Savoir utiliser des serveurs, relier des applications par ces services et les sécuriser",
@@ -231,7 +202,6 @@ export default [
   },
   {
     nom: "Gérer des données de l’information",
-    usageDepuis: "2023",
     categorie: "Compétence BUT",
     maitrise: "Bonne",
     details: "Optimiser une base de données, interagir avec une application et mettre en œuvre la sécurité",
@@ -239,7 +209,6 @@ export default [
   },
   {
     nom: "Conduire un projet",
-    usageDepuis: "2023",
     categorie: "Compétence BUT",
     maitrise: "Bonne",
     details: "Analyser les processus d'une organisation pour améliorer son système d'information, et être capable de suivre des projets",
@@ -247,7 +216,6 @@ export default [
   },
   {
     nom: "Travailler et collaborer au sein d'une équipe informatique",
-    usageDepuis: "2023",
     categorie: "Compétence BUT",
     maitrise: "Moyenne",
     details: "Situer son rôle et ses missions au sein d'une équipe informatique",

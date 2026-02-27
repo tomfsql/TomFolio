@@ -13,10 +13,8 @@
         <li> <i class="fa-solid fa-dumbbell"></i>Pratique hebdomadaire du sport : discipline, assiduité, dépassement de soi </li>
     </ul>
   </template>
-  
   <script>
   export default {
     name: 'AboutPage',
   }
   </script>
-  

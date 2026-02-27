@@ -1,10 +1,10 @@
 <template>
   <h1> Bienvenue sur mon portfolio ! </h1>
 
-  <p> Ce site a pour but de monter mes compétences et projets accomplis, 
+  <p> Ce site a pour but de montrer mes compétences et projets accomplis,
     et aussi d'en savoir un peu plus sur moi. </p>
 
-  <div class="brief"> 
+  <div class="brief">
     <p>Au cours de ma scolarité, j'ai eu l'occasion de manier différents langages de programmation
     et paradigmes : </p>
     <ul>
@@ -21,7 +21,7 @@
       </ul>
 
     <p> Ajoutons à cela une connaissance des scripts, une passion pour
-      la résolution de problèmes et l'optimisation, 
+      la résolution de problèmes et l'optimisation,
       et nous arrivons à un portrait assez complet.
     </p>
   </div>

@@ -1,15 +1,15 @@
 <template>
-  <div class="but-skills">
+  <div class="IRC-skills">
     <div class="title">
-      <h1>Compétences de référence liées au BUT Informatique, parcours Réalisation d'Applications</h1>
+      <h1>Compétences de référence liées à la filière IRC de CPE</h1>
     </div>
 
-    <div v-if="sortedCompetencesBUT.length">
+    <div v-if="sortedCompetencesIRC.length">
       <div class="skillgrid">
         <div
           class="card"
-          v-for="(tech, index) in sortedCompetencesBUT"
-          :key="'but-' + index"
+          v-for="(tech, index) in sortedCompetencesIRC"
+          :key="'IRC-' + index"
           :class="{
             good: tech.maitrise === 'Bonne',
             mid: tech.maitrise === 'Moyenne',
@@ -39,19 +39,19 @@
         </div>
       </div>
     </div>
-    <div v-else>Chargement ou aucune compétence BUT trouvée.</div>
+    <div v-else>Chargement ou aucune compétence IRC trouvée.</div>
   </div>
 </template>
 
 <script>
-import competences from "@/assets/data/competencesBUT.js";
+import competences from "@/assets/data/competencesIRC.js";
 
 export default {
-  name: "BUTSkillsPage",
+  name: "IRCSkillsPage",
   data() {
     return {
       competences: [],
-      showCompetencesBUT: {},
+      showCompetencesIRC: {},
       niveaux: {
         Bonne: 3,
         Moyenne: 2,
@@ -60,18 +60,18 @@ export default {
     };
   },
   computed: {
-    sortedCompetencesBUT() {
+    sortedCompetencesIRC() {
       return this.competences.filter(tech =>
-        !tech.categorie.toLowerCase().includes("but")
+        !tech.categorie.toLowerCase().includes("IRC")
       );
-    },
+    }
   },
   methods: {
     toggleExpand(competence) {
       competence.expanded = !competence.expanded;
     },
     initializeDisplayStates(competencesData) {
-      this.showCompetencesBUT = competencesData.reduce((acc, tech) => {
+      this.showCompetencesIRC = competencesData.reduce((acc, tech) => {
         acc[tech.nom] = true;
         return acc;
       }, {});

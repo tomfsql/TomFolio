@@ -2,6 +2,9 @@
   <div>
     <h1>Mes projets</h1>
 
+      <p> Les compétences liées à  filière IRC sont présentées <RouterLink to="/IRCskills"> ici </RouterLink>.</p>
+
+
       <p> Les compétences liées au BUT et mobilisées lors de ces projets sont présentées <RouterLink to="/skills#BUTSkills"> ici </RouterLink>.</p>
 
 
@@ -19,10 +22,10 @@
             <div v-if="showProjects[projet.id]">
               <p><strong>Période :</strong> {{ projet.date }}</p>
               <p><strong>Langages utilisés :</strong> {{ projet.techno }}</p>
-              <p> {{  projet.details }}</p>            
+              <p> {{  projet.details }}</p>
               <p><strong>Compétences mobilisées :</strong> {{  projet.competences }} </p>
               <div v-if="projet.url">
-                <p><strong> <a :href="projet.url" target="_blank" rel="noopener">Voir le projet</a></strong> 
+                <p><strong> <a :href="projet.url" target="_blank" rel="noopener">Voir le projet</a></strong>
                 </p>
               </div>
               <div v-else>

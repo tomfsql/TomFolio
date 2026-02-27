@@ -4,6 +4,7 @@ import AboutPage from '@/components/AboutPage.vue'
 import ProjectsPage from '@/components/ProjectsPage.vue'
 import SkillsPage from '@/components/SkillsPage.vue'
 import BUTSkillsPage from '@/components/BUTSkillsPage.vue'
+import IRCSkillsPage from '@/components/IRCSkillsPage.vue'
 
 const router = createRouter({
   history: createWebHistory(process.env.VUE_BASE_URL),
@@ -12,7 +13,8 @@ const router = createRouter({
     { path: '/about', name: 'À propos de moi', component: AboutPage },
     { path: '/projects', name: 'Projets', component: ProjectsPage },
     { path: '/skills', name: 'Compétences techniques', component: SkillsPage },
-    { path: '/BUTskills', name: 'Compétences du BUT', component: BUTSkillsPage }
+    { path: '/BUTskills', name: 'Compétences du BUT', component: BUTSkillsPage },
+    { path: '/IRCskills', name: 'Compétences de la filière IRC', component: IRCSkillsPage }
   ],
   scrollBehavior(to) {
     if (to.hash) {

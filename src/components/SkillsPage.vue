@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import competences from "@/assets/data/competences.js";
+import competences from "@/assets/data/competencesIRC.js";
 
 export default {
   name: "SkillsPage",
