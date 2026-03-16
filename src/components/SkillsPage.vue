@@ -1,5 +1,5 @@
 <template>
-  <h1>Compétences (hors BUT)</h1>
+  <h1>Compétences</h1>
 
     <div class="search-bar">
       <input
@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import competences from "@/assets/data/competencesIRC.js";
+import competences from "@/assets/data/competences.js";
 
 export default {
   name: "SkillsPage",
@@ -65,17 +65,15 @@ export default {
   computed: {
     filteredGroupedCompetences() {
       const term = this.search.trim().toLowerCase();
-
+      let s = term.length;
       const filtered = this.competences.filter(
-        tech =>
-          !tech.categorie.toLowerCase().includes("but") &&
-          tech.nom.toLowerCase().includes(term)
+        tech => tech.nom.toLowerCase().substring(0,s+1).includes(term)
       );
 
       const normalize = tech => {
         const c = tech.categorie.toLowerCase();
         if (c.includes("programmation") || c.includes("framework")) return "Langages & Frameworks";
-        if (c.includes("base")) return "Langages de manipulation de BD";
+        if (c.includes("base")) return "Langages de gestion de Base de Données";
         if (c.includes("système") || c.includes("os")) return "Outils & système";
         if (c.includes("gestion de projet") || c.includes("modélisation")) return "Gestion de projet & Modélisation";
         return tech.categorie;

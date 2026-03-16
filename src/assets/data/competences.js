@@ -3,37 +3,31 @@ export default [
     nom: "Java",
     categorie: "Langage orienté-objet de programmation logicielle",
     maitrise: "Bonne",
-    details: "Langage utilisé régulièrement dans mon cursus, avec les concepts d'héritage, polymorphisme. Usage de Swing pour créer des IHM",
+    details: "Langage utilisé en programmation mobile Android",
     image: new URL('@/assets/img/java.svg', import.meta.url).href
   },
   {
     nom: "C",
     categorie: "Langage impératif de programmation logicielle",
     maitrise: "Moyenne",
-    details: "Langage utilisé en Année Spéciale uniquement",
+    details: "Langage utilisé à chaque semestre",
     image: new URL('@/assets/img/c.svg', import.meta.url).href
-  },
-  {
-    nom: "JavaScript/TypeScript",
-    categorie: "Langage de programmation web",
-    maitrise: "Bonne",
-    details: "Langage fréquemment utilisé en cours et en entreprise, que ce soit en framework ou non, pour des projets",
-    image: new URL('@/assets/img/typescript.svg', import.meta.url).href
   },
   {
     nom: "Python",
     categorie: "Langage de programmation web et logicielle",
     maitrise: "Bonne",
-    details: "Utilisé en programmation multimédia, avec FastAPI dans le cadre d'un projet, ainsi que pour des tests unitaires",
+    details: "Usage pour de l'algorthmique",
     image: new URL('@/assets/img/python.svg', import.meta.url).href
   },
   {
     nom: "PHP",
     categorie: "Langage de programmation web",
     maitrise: "Basique",
-    details: "Langage uniquement utilisé en cours en Année Spéciale",
+    details: "Langage uniquement utilisé en cours de programmation web",
     image: new URL('@/assets/img/php.svg', import.meta.url).href
   },
+
   {
     nom: "C#",
     categorie: "Langage de programmation logicielle",
@@ -119,12 +113,6 @@ export default [
     image: new URL('@/assets/img/git.svg', import.meta.url).href
   },
   {
-    nom: "Windows",
-    categorie: "Système d'exploitation",
-    maitrise: "Bonne",
-    image: new URL('@/assets/img/windows.svg', import.meta.url).href
-  },
-  {
     nom: "GNU/Linux",
     categorie: "Système d'exploitation",
     maitrise: "Bonne",
@@ -143,82 +131,5 @@ export default [
     maitrise: "Moyenne",
     details: "Langage vu en cours et utilisé au quotidien sur mon ordinateur personnel",
     image: new URL('@/assets/img/bash.svg', import.meta.url).href
-  },
-  {
-    nom: "UML",
-    categorie: "Outil de modélisation",
-    details: "Langage de modélisation de Base de Données",
-    maitrise : "Moyenne",
-    image: new URL('@/assets/img/uml.svg', import.meta.url).href
-  },
-  {
-    nom: "Trello",
-    categorie: "Outil de gestion de projet",
-    details: "Application et site web destinée à la gestion de projets",
-    maitrise : "Moyenne",
-    image: new URL('@/assets/img/trello.svg', import.meta.url).href
-  },
-  {
-    nom: "Agile / Scrum ",
-    categorie: "Méthode de gestion de projet",
-    details: "Connaissance et utilisation des principes Agile et mise en place via la méthodologie Scrum",
-    maitrise : "Moyenne",
-    image: new URL('@/assets/img/agile.svg', import.meta.url).href
-  },
-  {
-    nom: "Kanban ",
-    categorie: "Méthode de gestion de projet",
-    details: "Connaissance et utilisation de la méthode Kanban",
-    maitrise : "Moyenne",
-    image: new URL('@/assets/img/kanban.svg', import.meta.url).href
-  },
-  {
-    nom: "Google Tools",
-    categorie: "Outils de gestion de projet",
-    details: "Usage régulier des outils Google",
-    maitrise : "Moyenne",
-    image: new URL('@/assets/img/google.svg', import.meta.url).href
-  },
-  {
-    nom: "Réaliser un développement d'application",
-    categorie: "Compétence BUT",
-    maitrise: "Bonne",
-    details: "Choisir les bonnes technologies, intégrer des applications dans des environnements de production et savoir les maintenir en état",
-    image: new URL('@/assets/img/dev.png', import.meta.url).href
-  },
-  {
-    nom: "Optimiser des applications",
-    categorie: "Compétence BUT",
-    maitrise: "Bonne",
-    details: "Améliorer un code existant après analyse de son comportement, comparer différentes solutions pour sélectionner la plus adéquate",
-    image: new URL('@/assets/img/optimize.png', import.meta.url).href
-  },
-  {
-    nom: "Administrer des systèmes informatiques communicants complexes",
-    categorie: "Compétence BUT",
-    maitrise: "Bonne",
-    details: "Savoir utiliser des serveurs, relier des applications par ces services et les sécuriser",
-    image: new URL('@/assets/img/admin.png', import.meta.url).href
-  },
-  {
-    nom: "Gérer des données de l’information",
-    categorie: "Compétence BUT",
-    maitrise: "Bonne",
-    details: "Optimiser une base de données, interagir avec une application et mettre en œuvre la sécurité",
-    image: new URL('@/assets/img/data.png', import.meta.url).href
-  },
-  {
-    nom: "Conduire un projet",
-    categorie: "Compétence BUT",
-    maitrise: "Bonne",
-    details: "Analyser les processus d'une organisation pour améliorer son système d'information, et être capable de suivre des projets",
-    image: new URL('@/assets/img/manage.png', import.meta.url).href
-  },
-  {
-    nom: "Travailler et collaborer au sein d'une équipe informatique",
-    categorie: "Compétence BUT",
-    maitrise: "Moyenne",
-    details: "Situer son rôle et ses missions au sein d'une équipe informatique",
-    image: new URL('@/assets/img/collaborate.png', import.meta.url).href
   }
 ];

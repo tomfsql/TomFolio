@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import competences from "@/assets/data/competencesIRC.js";
+import competences from "@/assets/data/competences.js";
 
 export default {
   name: "IRCSkillsPage",
@@ -62,7 +62,7 @@ export default {
   computed: {
     sortedCompetencesIRC() {
       return this.competences.filter(tech =>
-        !tech.categorie.toLowerCase().includes("IRC")
+        tech.categorie.toUpperCase().includes("IRC")
       );
     }
   },
