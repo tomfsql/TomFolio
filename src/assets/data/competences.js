@@ -3,8 +3,22 @@ export default [
     nom: "Java",
     categorie: "Langage orienté-objet de programmation logicielle",
     maitrise: "Bonne",
-    details: "Langage utilisé en programmation mobile Android",
+    details: "Langage utilisé en programmation orientée-objet et logicielle",
     image: new URL('@/assets/img/java.svg', import.meta.url).href
+  },
+  {
+    nom: "Kotlin",
+    categorie: "Langage orienté-objet de programmation logicielle",
+    maitrise: "Basique",
+    details: "Langage utilisé en programmation mobile Android",
+    image: new URL('@/assets/img/kotlin.svg', import.meta.url).href
+  },
+  {
+    nom: "Quarkus",
+    categorie: "Framework basé sur Java, orienté déploiement",
+    maitrise: "Bonne",
+    details: "Langage utilisé en programmation logicielle à ENFRASYS",
+    image: new URL('@/assets/img/quarkus.svg', import.meta.url).href
   },
   {
     nom: "C",

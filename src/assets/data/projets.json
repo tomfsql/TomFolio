@@ -80,5 +80,17 @@
         "url": "https://github.com/tomfsql/PropertyGridWithCore2"
       }
     ]
+ },
+ "Enfrasys": {
+    "label": "Projets réalisés au cours de mon alternance chez ENFRASYS",
+    "projets": [
+      {
+        "titre": "Application interne de gestion des journaux",
+        "id": "JournalDeBord",
+        "date": "Alternance – 2026",
+        "details": "Application interne connectée au reste des services : CRUD, tests, lien avec l'IHM",
+        "techno": "Angular, Quarkus, REST"
+      }
+    ]
  }
 }
